@@ -44,6 +44,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabAutoplanes = new System.Windows.Forms.TabPage();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabProductos2.SuspendLayout();
@@ -159,6 +160,7 @@
             this.tabPrincipal.Controls.Add(this.tabPage2);
             this.tabPrincipal.Controls.Add(this.tabPage3);
             this.tabPrincipal.Controls.Add(this.tabPage4);
+            this.tabPrincipal.Controls.Add(this.tabAutoplanes);
             this.tabPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tabPrincipal.Name = "tabPrincipal";
@@ -223,6 +225,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(742, 216);
             this.dataGridView1.TabIndex = 3;
             // 
+            // tabAutoplanes
+            // 
+            this.tabAutoplanes.Location = new System.Drawing.Point(4, 22);
+            this.tabAutoplanes.Name = "tabAutoplanes";
+            this.tabAutoplanes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAutoplanes.Size = new System.Drawing.Size(788, 429);
+            this.tabAutoplanes.TabIndex = 4;
+            this.tabAutoplanes.Text = "Autoplanes";
+            this.tabAutoplanes.UseVisualStyleBackColor = true;
+            // 
             // DistribuidoraCrelech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,6 +274,7 @@
         private System.Windows.Forms.Button btnNuevoProducto;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TabPage tabAutoplanes;
     }
 }
 
