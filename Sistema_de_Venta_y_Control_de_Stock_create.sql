@@ -142,10 +142,10 @@ CREATE TABLE LOCALIDADES (
 );
 
 -- Table: MARCAS
-CREATE TABLE MARCAS (
-    id_marca int NOT NULL identity(1,1),
-    descripcion varchar(50) NOT NULL,
-    CONSTRAINT MARCAS_pk PRIMARY KEY (id_marca)
+CREATE TABLE MATERIALES (
+   id_material int NOT NULL identity(1,1),
+   descripcion varchar(50) NOT NULL,
+   CONSTRAINT MATERIALES_pk PRIMARY KEY (id_material)
 );
 
 -- Table: ORDEN_PEDIDO
@@ -334,9 +334,9 @@ ALTER TABLE PERSONAS ADD CONSTRAINT FK_PERSONAS_TIPO_IDENTIFICACION FOREIGN KEY 
 ALTER TABLE PRODUCTOS ADD CONSTRAINT FK_PRODUCTOS_COLORES FOREIGN KEY(id_color)
     REFERENCES COLORES (id_color);
 
--- Reference: PRODUCTOS_MARCAS (table: PRODUCTOS)
-ALTER TABLE PRODUCTOS ADD CONSTRAINT FK_PRODUCTOS_MARCAS FOREIGN KEY (id_marca)
-    REFERENCES MARCAS (id_marca);
+-- Reference: PRODUCTOS_MATERIALES (table: PRODUCTOS)
+ALTER TABLE PRODUCTOS ADD CONSTRAINT FK_PRODUCTOS_MATERIALES FOREIGN KEY (id_marca)
+    REFERENCES MATERIALES (id_material);
 
 -- Reference: PRODUCTOS_RUBROS (table: PRODUCTOS)
 ALTER TABLE PRODUCTOS ADD CONSTRAINT FK_PRODUCTOS_RUBROS FOREIGN KEY (id_rubro)
@@ -412,3 +412,28 @@ insert into TIPOS_CLIENTES (descripcion) values ('Concesionaria')			--3
 insert into TIPOS_CLIENTES (descripcion) values ('Vendedora de autopartes')	--4
 
 --AUTOPLANES
+
+
+---------------------PRODUCTOS------------------------------
+--TIPOS PRODUCTOS
+INSERT INTO TIPOS_PRODUCTOS (descripcion) VALUES ('Autoparte')	--1
+INSERT INTO TIPOS_PRODUCTOS (descripcion) VALUES ('Automovil')	--2
+
+--COLORES
+INSERT INTO COLORES (descripcion) VALUES ('Rojo')		--1
+INSERT INTO COLORES (descripcion) VALUES ('Verde')		--2
+INSERT INTO COLORES (descripcion) VALUES ('Amarillo')	--3
+INSERT INTO COLORES (descripcion) VALUES ('Negro')		--4
+INSERT INTO COLORES (descripcion) VALUES ('Gris')		--5
+INSERT INTO COLORES (descripcion) VALUES ('Blanco')		--6
+
+--RUBROS
+INSERT INTO RUBROS(descripcion) VALUES ('')		--1
+
+--MATERIALES
+INSERT INTO MATERIALES(descripcion) VALUES ('Plastico')
+INSERT INTO MATERIALES(descripcion) VALUES ('Acero')
+INSERT INTO MATERIALES(descripcion) VALUES ('Aluminio')
+
+INSERT INTO PRODUCTOS VALUES ()
+
