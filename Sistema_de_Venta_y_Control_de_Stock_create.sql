@@ -24,19 +24,19 @@ CREATE TABLE AUTOPLANES (
 CREATE TABLE BARRIOS (
     id_barrio int NOT NULL identity(1,1),
     barrio varchar(20) NOT NULL,
-    id_localidad int NOT NULL,
+    id_localidad int ,
     CONSTRAINT BARRIOS_pk PRIMARY KEY (id_barrio)
 );
 
 -- Table: CLIENTES
 CREATE TABLE CLIENTES (
     id_cliente int NOT NULL identity(1,1),
-    id_persona int NOT NULL,
-    id_empresa int NOT NULL,
+    id_persona int ,
+    id_empresa int ,
     id_tipo_cliente int NOT NULL,
-    email varchar(30) NOT NULL,
-    telefono bigint NOT NULL,
-    id_direccion int NOT NULL,
+    email varchar(30) ,
+    telefono bigint ,
+    id_direccion int ,
     CONSTRAINT CLIENTES_pk PRIMARY KEY (id_cliente)
 );
 
@@ -54,7 +54,7 @@ CREATE TABLE CUOTAS_AUOTPLAN (
     fecha_vencimiento date NOT NULL,
     nro_cuota int NOT NULL,
     id_autoplan int NOT NULL,
-    id_factura int NOT NULL,
+    id_factura int ,
     CONSTRAINT CUOTAS_AUOTPLAN_pk PRIMARY KEY (id_cuota)
 );
 
@@ -65,13 +65,13 @@ CREATE TABLE DETALLES_FACTURAS (
     precio decimal(19,4) NOT NULL,
     cantidad int NOT NULL,
     id_producto int NOT NULL,
-    descuento_producto int NOT NULL,
+    descuento_producto int ,
     CONSTRAINT DETALLES_FACTURAS_pk PRIMARY KEY (id_detalle)
 );
 
 -- Table: DETALLE_PEDIDO
 CREATE TABLE DETALLE_PEDIDO (
-    id_det_pedido int NOT NULL,
+    id_det_pedido int NOT NULL identity(1,1),
     id_pedido int NOT NULL,
     id_producto int NOT NULL,
     cantidad int NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE DIRECCIONES (
     id_direccion int NOT NULL identity(1,1),
     calle varchar(30) NOT NULL,
     numero int NOT NULL,
-    id_barrio int NOT NULL,
+    id_barrio int,
     CONSTRAINT DIRECCIONES_pk PRIMARY KEY (id_direccion)
 );
 
@@ -91,7 +91,7 @@ CREATE TABLE DIRECCIONES (
 CREATE TABLE EMPRESAS (
     id_empresa int NOT NULL identity(1,1),
     razon_social varchar(30) NOT NULL,
-    cuit int NOT NULL,
+    cuit int,
     CONSTRAINT EMPRESAS_pk PRIMARY KEY (id_empresa)
 );
 
@@ -100,11 +100,11 @@ CREATE TABLE FACTURAS (
     id_factura int NOT NULL identity(1,1),
     fecha date NOT NULL,
     id_cliente int NOT NULL,
-    descuento_total int NOT NULL,
-    id_vendedor int NOT NULL,
+    descuento_total int ,
+    id_vendedor int ,
     id_tipo_factura int NOT NULL,
-    observacion varchar(150) NOT NULL,
-    id_pedido int NOT NULL,
+    observacion varchar(150),
+    id_pedido int,
     CONSTRAINT FACTURAS_pk PRIMARY KEY (id_factura)
 );
 
@@ -137,7 +137,7 @@ CREATE TABLE HISTORIALES_PRECIOS (
 CREATE TABLE LOCALIDADES (
     id_localidad int NOT NULL,
     localidad varchar(20) NOT NULL,
-    id_provincia int NOT NULL,
+    id_provincia int,
     CONSTRAINT LOCALIDADES_pk PRIMARY KEY (id_localidad)
 );
 
@@ -152,10 +152,10 @@ CREATE TABLE MARCAS (
 CREATE TABLE ORDEN_PEDIDO (
     id_pedido int NOT NULL identity(1,1),
     fecha_pedido date NOT NULL,
-    fecha_entrega date NOT NULL,
-    id_cliente int NOT NULL,
+    fecha_entrega date,
+    id_cliente int ,
     estado bit NOT NULL DEFAULT 0,
-    observacion int NOT NULL,
+    observacion int ,
     CONSTRAINT ORDEN_PEDIDO_pk PRIMARY KEY (id_pedido)
 );
 
@@ -164,20 +164,20 @@ CREATE TABLE PERSONAS (
     id_persona int NOT NULL identity(1,1),
     nombre varchar(20) NOT NULL,
     apellido varchar(20) NOT NULL,
-    id_tipo_identificacion int NOT NULL,
-    dni bigint NOT NULL,
+    id_tipo_identificacion int ,
+    dni bigint ,
     CONSTRAINT PERSONAS_pk PRIMARY KEY (id_persona)
 );
 
 -- Table: PRODUCTOS
 CREATE TABLE PRODUCTOS (
     id_producto int NOT NULL identity(1,1),
-    descripcion varchar(100) NOT NULL,
+    descripcion varchar(100),
     id_tipo_producto int NOT NULL,
     id_rubro int NOT NULL,
     id_marca int NOT NULL,
-    Observaciones varchar(50) NOT NULL,
-    id_color int NOT NULL,
+    Observaciones varchar(50),
+    id_color int ,
     stock int NOT NULL,
     stock_minimo int NOT NULL,
     precio_venta decimal(19,4) NOT NULL,
@@ -230,7 +230,7 @@ CREATE TABLE TIPO_IDENTIFICACION (
 -- Table: VENDEDORES
 CREATE TABLE VENDEDORES (
     id_vendedor int NOT NULL identity(1,1),
-    id_direccion int NOT NULL,
+    id_direccion int ,
     id_persona int NOT NULL,
     CONSTRAINT VENDEDORES_pk PRIMARY KEY (id_vendedor)
 );
