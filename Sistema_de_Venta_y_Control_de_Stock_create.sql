@@ -31,8 +31,8 @@ CREATE TABLE BARRIOS (
 -- Table: CLIENTES
 CREATE TABLE CLIENTES (
     id_cliente int NOT NULL identity(1,1),
-    nombre int NOT NULL,
-    apellido int ,
+    nombre varchar(30) NOT NULL,
+    apellido varchar(30) ,
     doc int NOT NULL,
     id_tipo_identificacion int NOT NULL,
     id_tipo_cliente int NOT NULL,
@@ -181,7 +181,7 @@ CREATE TABLE RUBROS (
 -- Table: TIPOS_CLIENTES
 CREATE TABLE TIPOS_CLIENTES (
     id_tipo_cliente int NOT NULL,
-    descripcion int NOT NULL,
+    descripcion varchar(20) NOT NULL,
     CONSTRAINT TIPOS_CLIENTES_pk PRIMARY KEY (id_tipo_cliente)
 );
 
@@ -327,7 +327,6 @@ ALTER TABLE VENDEDORES ADD CONSTRAINT FK_VENDEDORES_TIPO_IDENTIFICACION FOREIGN 
     REFERENCES TIPO_IDENTIFICACION (id_tipo_identificacion);
 
 
-
 --DATOS
 --PROVINCIAS
 INSERT INTO PROVINCIAS(provincia) VALUES ('Cordoba')
@@ -354,22 +353,35 @@ INSERT INTO BARRIOS(BARRIO,id_localidad) VALUES ('NUEVA CORDOBA',1)
 INSERT INTO BARRIOS(BARRIO,id_localidad) VALUES ('MAIPU',1) 
 INSERT INTO BARRIOS(BARRIO,id_localidad) VALUES ('PANAMERICANO',1) 
 
---PERSONAS
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Perez', 'Rodolfo','San Martin', 120,1,NULL,NULL);
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Castillo', 'Marta Analia','Pedro Lozano', 1450,7,NULL,'castillo_marta@yahoo.com');
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Abarca', 'Hector','Luis Gongora', 160,12,4701314,'habarca@hotmail.com');
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Morales','Santiago','Leon y Pizarro', 55,2,155471516,NULL);
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Perez', 'Carlos Antonio','A. Garzon', 455,2,4554466,NULL);
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Morales', 'Pilar','Leon y Pizarro', 55,2,155471516,NULL);
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Paez', 'Roque','Humberto Primo', 79,1,4262630,NULL);
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Luque', 'Elvira Josefa','Mariano Usandivaras', 360,3,4502829,NULL);
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Ruiz', 'Marcos','Rivera Indarte', 780,1,NULL,'ruiz_marcos@hotmail.com');
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Moriel', 'Roberto','Santa Rosa', 73,1,NULL,NULL);
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Perez', 'Ana Maria','Av. Colon', 1655,2,NULL,NULL);
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Gonzalez', 'Adriana','San Jeronimo', 763,1,NULL,NULL);	--Cod_cliente=12
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Moralez', 'Juana','Salamanca', 2345,11,3516111222,'juanita_2018@gmail.com');
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Ariza', 'Sofia','Derqui', 876,10,3512333444,NULL);
-insert into clientes (ape_cliente, nom_cliente, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Angellozzi', 'Matias','Ituzaingo', 1127,10,3516012345,NULL);	--Cod_cliente=15
+
+--TIPOS CLIENTES
+insert into TIPOS_CLIENTES (id_tipo_cliente, descripcion) values (1,'Consumidos final')		--1
+insert into TIPOS_CLIENTES (id_tipo_cliente,descripcion) values (2,'Empresa')					--2
+insert into TIPOS_CLIENTES (id_tipo_cliente,descripcion) values (3,'Concesionaria')			--3
+insert into TIPOS_CLIENTES (id_tipo_cliente,descripcion) values (4,'Vendedora de autopartes')	--4
+
+--TIPOS IDENTIFICACION
+insert into TIPO_IDENTIFICACION (id_tipo_identificacion, Identificacion) values (1,'DNI')		--1
+insert into TIPO_IDENTIFICACION (id_tipo_identificacion,Identificacion) values (2,'CUIL')	--2
+
+select * from CLIENTES
+--CLIENTES
+insert into CLIENTES (nombre, apellido, doc, id_tipo_identificacion, id_tipo_cliente,email,telefono,calle,altura,id_barrio) values ('Rodrigo', 'Sanchez','414399', 1,1,'rodri.sanchez1998@gmail.com',3515205101,'Aguas Sacha',9559,NULL);
+
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Castillo', 'Marta Analia','Pedro Lozano', 1450,7,NULL,'castillo_marta@yahoo.com');
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Abarca', 'Hector','Luis Gongora', 160,12,4701314,'habarca@hotmail.com');
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Morales','Santiago','Leon y Pizarro', 55,2,155471516,NULL);
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Perez', 'Carlos Antonio','A. Garzon', 455,2,4554466,NULL);
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Morales', 'Pilar','Leon y Pizarro', 55,2,155471516,NULL);
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Paez', 'Roque','Humberto Primo', 79,1,4262630,NULL);
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Luque', 'Elvira Josefa','Mariano Usandivaras', 360,3,4502829,NULL);
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Ruiz', 'Marcos','Rivera Indarte', 780,1,NULL,'ruiz_marcos@hotmail.com');
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Moriel', 'Roberto','Santa Rosa', 73,1,NULL,NULL);
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Perez', 'Ana Maria','Av. Colon', 1655,2,NULL,NULL);
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Gonzalez', 'Adriana','San Jeronimo', 763,1,NULL,NULL);	--Cod_cliente=12
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Moralez', 'Juana','Salamanca', 2345,11,3516111222,'juanita_2018@gmail.com');
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Ariza', 'Sofia','Derqui', 876,10,3512333444,NULL);
+insert into clientes (nombre, apellido, calle, altura, cod_barrio, nro_tel, [e-mail]) values ('Angellozzi', 'Matias','Ituzaingo', 1127,10,3516012345,NULL);	--Cod_cliente=15
 
 --VENDEDORES
 insert into vendedores (ape_vendedor, nom_vendedor, calle, altura, cod_barrio, nro_tel, [e-mail], fec_nac) values ('Carrizo', 'Mart?n','San Lorenzo', 369,2,NULL,'mcarrizo@latinmail.com',null);
@@ -379,11 +391,6 @@ insert into vendedores (ape_vendedor, nom_vendedor, calle, altura, cod_barrio, n
 insert into vendedores (ape_vendedor, nom_vendedor, calle, altura, cod_barrio, nro_tel, [e-mail], fec_nac) values ('Monti', 'Gabriel','Altoaguirre', 1245,4,4522122,NULL,'Jul 30 1982');
 insert into vendedores (ape_vendedor, nom_vendedor, calle, altura, cod_barrio, nro_tel, [e-mail], fec_nac) values ('Juarez','Susana','Antofagasta', 1785,9,458976,NULL,'30/7/1982');
 
---TIPOS CLIENTES
-insert into TIPOS_CLIENTES (descripcion) values ('Consumidos final')		--1
-insert into TIPOS_CLIENTES (descripcion) values ('Empresa')					--2
-insert into TIPOS_CLIENTES (descripcion) values ('Concesionaria')			--3
-insert into TIPOS_CLIENTES (descripcion) values ('Vendedora de autopartes')	--4
 
 --AUTOPLANES
 
