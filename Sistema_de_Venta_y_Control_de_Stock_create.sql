@@ -1255,44 +1255,47 @@ INSERT INTO TIPOS_FACTURAS(descripcion) VALUES ('NOTA DE DEBITO B')
 INSERT INTO TIPOS_FACTURAS(descripcion) VALUES ('NOTA DE DEBITO C')
 
 --FACTURAS
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('01/12/2020',1,1,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('01/14/2020',3,2,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('01/28/2020',2,3,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('02/07/2020',4,4,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('02/18/2020',5,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('02/27/2020',6,6,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('03/8/2020',2,7,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('03/12/2020',8,8,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('03/19/2020',4,9,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('03/27/2020',10,10,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('04/11/2020',12,1,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('04/18/2020',14,2,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('04/19/2020',13,3,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('04/24/2020',2,4,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('05/01/2020',24,1,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('05/12/2020',12,2,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('05/19/2020',1,3,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('05/24/2020',22,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('06/12/2020',14,6,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('06/18/2020',8,7,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('06/21/2020',7,9,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('06/28/2020',6,1,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('09/01/2020',7,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('09/14/2020',4,4,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('09/20/2020',9,9,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('09/28/2020',7,7,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('10/01/2020',6,1,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,id_tipo_factura) VALUES ('10/09/2020',3,3,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/12/2020',1,1,10,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/14/2020',3,2,20,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/28/2020',2,3,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/07/2020',4,4,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/18/2020',5,5,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/27/2020',6,6,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/08/2020',2,7,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/12/2020',8,8,2,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/19/2020',4,9,2,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/27/2020',10,10,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/11/2020',12,1,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/18/2020',14,2,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/19/2020',13,3,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/24/2020',2,4,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/01/2020',24,1,10,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/12/2020',12,2,10,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/19/2020',1,3,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/24/2020',22,5,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/12/2020',14,6,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/18/2020',8,7,10,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/21/2020',7,9,10,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/28/2020',6,1,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/01/2020',7,5,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/14/2020',4,4,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/20/2020',9,9,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/28/2020',7,7,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/01/2020',6,1,5,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/08/2020',4,2,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/10/2020',3,3,0,2)
 
 --Detalles Facturas
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(1,381,10,40,10)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(2,261,10,54,5)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(3,180,2,56,3)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(4,301,1,60,15)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(4,1047621,1,4,5) --automovil
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(5,208,1,24,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(5,302,1,44,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(5,212,1,45,14)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(6,261,2,54,10)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(6,1755088,1,3,5)--automovil
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(6,482,1,64,10)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(6,102,1,61,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(7,375,2,27,10)
@@ -1301,10 +1304,11 @@ insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_p
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(8,117,3,29,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(9,488,1,55,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(10,301,3,60,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(10,1249283,1,16,0)--automovil
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(11,117,3,29,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(12,102,2,61,10)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(12,209,2,69,0)
-insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(13,390,1,42,5)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(13,975586,1,10,5)--automovil
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(14,192,1,31,3)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(15,117,1,29,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(16,484,2,25,0)
@@ -1317,43 +1321,44 @@ insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_p
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(23,390,1,42,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(24,117,5,29,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(24,488,3,55,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(25,1239261,1,8,0)--automovil
 
 
 --MODIFICACIONES A LA ESTRUCTURA ORIGINAL--
 
-ALTER TABLE BARRIOS
-ALTER COLUMN BARRIO VARCHAR (40); --CAMBIO EL LARGO DE LA CELDA
+--ALTER TABLE BARRIOS
+--ALTER COLUMN BARRIO VARCHAR (40); --CAMBIO EL LARGO DE LA CELDA
 
-ALTER TABLE CLIENTES
-ALTER COLUMN DOC bigint NOT NULL; -- CAMBIO DE INT A BIGINT PARA ACEPTAR CUIT Y CUIL
+--ALTER TABLE CLIENTES
+--ALTER COLUMN DOC bigint NOT NULL; -- CAMBIO DE INT A BIGINT PARA ACEPTAR CUIT Y CUIL
 
-alter table colores
-alter column descripcion varchar (30) not null ; --CAMBIO DE INT A VARACHAR
+--alter table colores
+--alter column descripcion varchar (30) not null ; --CAMBIO DE INT A VARACHAR
 
 
-alter table localidades
-DROP CONsTRAINT localidades_pk; --ELIMINA LA CONSTRAINT PARA BORRAR LA COLUMNA
-ALTER TABLE LOCALIDADES
-DROP COLUMN id_localidad;  --BORRA LA COLUMNA
-ALTER TABLE LOCALIDADES
-ADD id_localidad int not null identity (1,1) --SE LA VUELVE A CREAR CON EL IDENTITY (1,1)
-alter table localidades
-add constraint localidades_pk primary key (id_localidad); --SE LA CONVIERTE EN CONSTRAINT
-alter table localidades
-alter column localidad varchar(40); --SE CAMBIA LA LONGITUD DE LA CELDA
+--alter table localidades
+--DROP CONsTRAINT localidades_pk; --ELIMINA LA CONSTRAINT PARA BORRAR LA COLUMNA
+--ALTER TABLE LOCALIDADES
+--DROP COLUMN id_localidad;  --BORRA LA COLUMNA
+--ALTER TABLE LOCALIDADES
+--ADD id_localidad int not null identity (1,1) --SE LA VUELVE A CREAR CON EL IDENTITY (1,1)
+--alter table localidades
+--add constraint localidades_pk primary key (id_localidad); --SE LA CONVIERTE EN CONSTRAINT
+--alter table localidades
+--alter column localidad varchar(40); --SE CAMBIA LA LONGITUD DE LA CELDA
 
-ALTER TABLE PRODUCTOS
-DROP COLUMN ID_MARCA; --ELIMINA CELDA INNECESARIA
+--ALTER TABLE PRODUCTOS
+--DROP COLUMN ID_MARCA; --ELIMINA CELDA INNECESARIA
 
-ALTER TABLE PRODUCTOS
-ALTER COLUMN STOCK INT NULL; --SE CONVIERTE ESTA COLUMNA EN NULL PARA LOS AUTOMOVILES
-ALTER TABLE PRODUCTOS
-ALTER COLUMN STOCK_MINIMO INT NULL;--SE CONVIERTE ESTA COLUMNA EN NULL PARA LOS AUTOMOVILES
+--ALTER TABLE PRODUCTOS
+--ALTER COLUMN STOCK INT NULL; --SE CONVIERTE ESTA COLUMNA EN NULL PARA LOS AUTOMOVILES
+--ALTER TABLE PRODUCTOS
+--ALTER COLUMN STOCK_MINIMO INT NULL;--SE CONVIERTE ESTA COLUMNA EN NULL PARA LOS AUTOMOVILES
 
-ALTER TABLE TIPOS_CLIENTES
-ALTER COLUMN DESCRIPCION VARCHAR (30) NOT NULL; --SE CAMBIA DE INT A VARCHAR
+--ALTER TABLE TIPOS_CLIENTES
+--ALTER COLUMN DESCRIPCION VARCHAR (30) NOT NULL; --SE CAMBIA DE INT A VARCHAR
 
-ALTER TABLE VENDEDORES
-ALTER COLUMN CALLE VARCHAR (40); -- SE EXTIENE LA LONGITUD DEL CAMPO
+--ALTER TABLE VENDEDORES
+--ALTER COLUMN CALLE VARCHAR (40); -- SE EXTIENE LA LONGITUD DEL CAMPO
 
 
