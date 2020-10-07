@@ -1323,6 +1323,13 @@ insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_p
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(24,488,3,55,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(25,1239261,1,8,0)--automovil
 
+--Ordenes de pedido de autos ya entregados
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('06/09/2019','02/07/2020',4,1)
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('06/08/2019','02/27/2020',6,1)
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('07/24/2019','03/27/2020',10,1)
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('01/14/2020','04/19/2020',13,1)
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('04/16/2020','09/20/2020',9,1)
+
 
 --MODIFICACIONES A LA ESTRUCTURA ORIGINAL--
 
