@@ -1329,6 +1329,12 @@ INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('
 INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('07/24/2019','03/27/2020',10,1)
 INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('01/14/2020','04/19/2020',13,1)
 INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('04/16/2020','09/20/2020',9,1)
+--Detalle de pedido
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(1,4,1)
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(2,3,1)
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(3,16,1)
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(4,10,1)
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(5,8,1)
 
 
 --MODIFICACIONES A LA ESTRUCTURA ORIGINAL--
