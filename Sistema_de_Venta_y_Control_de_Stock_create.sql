@@ -1327,19 +1327,6 @@ INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factur
 INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/02/2020',1,3,0,2)	--47 18 cuota autoplan 1
 
 
-select *
-from FACTURAS
-
-select  fa.id_factura
-from FACTURAS fa
-where fa.id_factura not in (select f.id_factura	
-				from FACTURAS f join DETALLES_FACTURAS df on f.id_factura = df.id_factura)
-
-select sum(df.precio), cl.nombre + ' ' + cl.apellido 'Nombre cliente', count(distinct ca.id_cuota) 'Cantidad de cuotas pagas', au.cant_cuota - count(distinct ca.id_cuota) 'Cuotas restantes'
-from CUOTAS_AUOTPLAN ca join FACTURAS fa on ca.id_factura = fa.id_factura join DETALLES_FACTURAS df  on fa.id_factura = df.id_factura
-		join AUTOPLANES au on ca.id_autoplan = au.id_autoplan join ORDEN_PEDIDO op on au.id_pedido = op.id_pedido join CLIENTES cl on cl.id_cliente = op.id_cliente
-group by ca.id_autoplan,  cl.nombre + ' ' + cl.apellido,au.cant_cuota
-
 
 --Detalles Facturas
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(1,381,10,40,10)
@@ -1430,7 +1417,20 @@ INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_fac
 INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('10/01/2020','10/20/2020',18,1,47) --cuota 18
 
 
+--ALGUNAS CONSULTAS
 
+select *
+from FACTURAS
+
+select  fa.id_factura
+from FACTURAS fa
+where fa.id_factura not in (select f.id_factura	
+				from FACTURAS f join DETALLES_FACTURAS df on f.id_factura = df.id_factura)
+
+select sum(df.precio), cl.nombre + ' ' + cl.apellido 'Nombre cliente', count(distinct ca.id_cuota) 'Cantidad de cuotas pagas', au.cant_cuota - count(distinct ca.id_cuota) 'Cuotas restantes'
+from CUOTAS_AUOTPLAN ca join FACTURAS fa on ca.id_factura = fa.id_factura join DETALLES_FACTURAS df  on fa.id_factura = df.id_factura
+		join AUTOPLANES au on ca.id_autoplan = au.id_autoplan join ORDEN_PEDIDO op on au.id_pedido = op.id_pedido join CLIENTES cl on cl.id_cliente = op.id_cliente
+group by ca.id_autoplan,  cl.nombre + ' ' + cl.apellido,au.cant_cuota
 
 --MODIFICACIONES A LA ESTRUCTURA ORIGINAL--
 
