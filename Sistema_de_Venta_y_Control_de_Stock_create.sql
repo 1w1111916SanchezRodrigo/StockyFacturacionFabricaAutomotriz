@@ -1137,9 +1137,6 @@ insert into VENDEDORES (nombre, apellido, id_barrio, calle, altura, id_tipo_iden
 
 
 
---AUTOPLANES
-
-
 ---------------------PRODUCTOS------------------------------
 --TIPOS PRODUCTOS
 INSERT INTO TIPOS_PRODUCTOS (descripcion) VALUES ('Autoparte')	--1
@@ -1234,6 +1231,30 @@ INSERT INTO productos(descripcion, id_tipo_producto, id_rubro, id_color, stock, 
 INSERT INTO productos(descripcion, id_tipo_producto, id_rubro, id_color, stock, stock_minimo, precio_venta, precio_mayo) values ('MOTOR SV',1,1,5,31,39,376,282)
 INSERT INTO productos(descripcion, id_tipo_producto, id_rubro, id_color, stock, stock_minimo, precio_venta, precio_mayo) values ('MULTIVÁLVULAS',1,1,5,37,32,209,156.75)
   
+
+  --ORDENES DE PEDIDOS
+
+--Ordenes de pedido de autos ya entregados
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('06/09/2019','02/07/2020',9,1)	--1
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('06/08/2019','02/27/2020',7,1)	--2
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('07/24/2019','03/27/2020',6,1)	--3
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('01/14/2020','04/19/2020',4,1)	--4
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('04/16/2020','09/20/2020',3,1)	--5
+
+--Ordenes de pedido de autoplanes
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('04/16/2019',null,1,0) --6 Todavia no se entrego, se pago 18 cuotas
+
+
+
+--DETALLES PEDIDOS
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(1,8,1)		--1
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(2,2,1)		--2
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(3,3,1)	--3
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(4,4,1)	--4
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(5,5,1)		--5
+--Detalle pedido autoplan
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(6,1,1)		--6
+
 ------------------------------- FACTURAS ------------------------------------------ YA CARGADO
 
 --FORMAS DE PAGO
@@ -1255,35 +1276,70 @@ INSERT INTO TIPOS_FACTURAS(descripcion) VALUES ('NOTA DE DEBITO B')
 INSERT INTO TIPOS_FACTURAS(descripcion) VALUES ('NOTA DE DEBITO C')
 
 --FACTURAS
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/12/2020',1,1,10,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/14/2020',3,2,20,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/28/2020',2,3,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/07/2020',4,4,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/18/2020',5,5,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/27/2020',6,6,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/08/2020',2,7,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/12/2020',8,8,2,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/19/2020',4,9,2,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/27/2020',10,10,0,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/11/2020',12,1,0,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/18/2020',14,2,0,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/19/2020',13,3,0,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/24/2020',2,4,0,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/01/2020',24,1,10,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/12/2020',12,2,10,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/19/2020',1,3,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/24/2020',22,5,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/12/2020',14,6,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/18/2020',8,7,10,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/21/2020',7,9,10,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/28/2020',6,1,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/01/2020',7,5,0,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/14/2020',4,4,0,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/20/2020',9,9,0,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/28/2020',7,7,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/01/2020',6,1,5,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/08/2020',4,2,0,2)
-INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/10/2020',3,3,0,2)
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/12/2020',1,1,10,2)	--1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/14/2020',3,2,20,2)	--2
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/28/2020',2,3,5,2)	--3
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/07/2020',4,4,5,2)	--4
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/18/2020',5,5,5,2)	--5
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/27/2020',6,6,5,2)	--6
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/08/2020',2,7,5,2)	--7
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/12/2020',8,8,2,2)	--8
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/19/2020',4,9,2,2)	--9
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/27/2020',10,10,0,2)	--10
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/11/2020',12,1,0,2)	--11
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/18/2020',14,2,0,2)	--12
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/19/2020',13,3,0,2)	--13
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/24/2020',2,4,0,2)	--14
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/01/2020',24,1,10,2)	--15
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/12/2020',12,2,10,2)	--16
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/19/2020',1,3,5,2)	--17
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/24/2020',22,5,5,2)	--18
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/12/2020',14,6,5,2)	--19
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/18/2020',8,7,10,2)	--20
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/21/2020',7,9,10,2)	--21
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/28/2020',6,1,5,2)	--22
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/01/2020',7,5,0,2)	--23
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/14/2020',4,4,0,2)	--24
+
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura,id_pedido) VALUES ('09/20/2020',9,9,0,2,1)	--25
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura,id_pedido) VALUES ('09/28/2020',7,7,0,2,2)	--26
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura,id_pedido) VALUES ('10/01/2020',6,1,0,2,3)	--27
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura,id_pedido) VALUES ('10/08/2020',4,2,0,2,4)	--28
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura,id_pedido) VALUES ('10/10/2020',3,3,0,2,5)	--29
+
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/02/2019',1,3,0,2)	--30 1 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/02/2019',1,3,0,2)	--31 2 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('07/02/2019',1,3,0,2)	--32 3 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('08/02/2019',1,3,0,2)	--33 4 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/02/2019',1,3,0,2)	--34 5 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/02/2019',1,3,0,2)	--35 6 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('11/02/2019',1,3,0,2)	--36 7 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('12/02/2019',1,3,0,2)	--37 8 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/02/2020',1,3,0,2)	--38 9 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/02/2020',1,3,0,2)	--39 10 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('03/02/2020',1,3,0,2)	--40 11 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/02/2020',1,3,0,2)	--41 12 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/02/2020',1,3,0,2)	--42 13 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/02/2020',1,3,0,2)	--43 14 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('07/02/2020',1,3,0,2)	--44 15 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('08/02/2020',1,3,0,2)	--45 16 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/02/2020',1,3,0,2)	--46 17 cuota autoplan 1
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/02/2020',1,3,0,2)	--47 18 cuota autoplan 1
+
+
+select *
+from FACTURAS
+
+select  fa.id_factura
+from FACTURAS fa
+where fa.id_factura not in (select f.id_factura	
+				from FACTURAS f join DETALLES_FACTURAS df on f.id_factura = df.id_factura)
+
+select sum(df.precio), cl.nombre + ' ' + cl.apellido 'Nombre cliente', count(distinct ca.id_cuota) 'Cantidad de cuotas pagas', au.cant_cuota - count(distinct ca.id_cuota) 'Cuotas restantes'
+from CUOTAS_AUOTPLAN ca join FACTURAS fa on ca.id_factura = fa.id_factura join DETALLES_FACTURAS df  on fa.id_factura = df.id_factura
+		join AUTOPLANES au on ca.id_autoplan = au.id_autoplan join ORDEN_PEDIDO op on au.id_pedido = op.id_pedido join CLIENTES cl on cl.id_cliente = op.id_cliente
+group by ca.id_autoplan,  cl.nombre + ' ' + cl.apellido,au.cant_cuota
+
 
 --Detalles Facturas
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(1,381,10,40,10)
@@ -1321,20 +1377,59 @@ insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_p
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(23,390,1,42,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(24,117,5,29,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(24,488,3,55,0)
+	---DETALLES CON PEDIDOS
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(25,1239261,1,8,0)--automovil
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(26,1505283,1,2,0) --
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(27,1755088,1,3,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(28,1047621,1,4,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(29,1155522,1,5,0)
 
---Ordenes de pedido de autos ya entregados
-INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('06/09/2019','02/07/2020',4,1)
-INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('06/08/2019','02/27/2020',6,1)
-INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('07/24/2019','03/27/2020',10,1)
-INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('01/14/2020','04/19/2020',13,1)
-INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('04/16/2020','09/20/2020',9,1)
---Detalle de pedido
-insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(1,4,1)
-insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(2,3,1)
-insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(3,16,1)
-insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(4,10,1)
-insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(5,8,1)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(30,77413.435,1,1,0) --Detalle factura cuota autoplan con el 10% de interes (1548268,7 total , 77413,435 x cuota)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(31,77413.435,1,1,0)	--
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(32,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(33,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(34,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(35,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(36,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(37,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(38,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(39,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(40,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(41,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(42,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(43,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(44,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(45,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(46,77413.435,1,1,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(47,77413.435,1,1,0)
+
+select *
+from PRODUCTOS
+
+-------------------------------AUTOPLANES--------------------
+INSERT INTO AUTOPLANES(observaciones,cant_cuota,interes,id_pedido) VALUES ('Entrega con todas las cuotas pagas',20,10,6) --1 20 cuotas con interes de 10% id pedido 6
+
+--CUOTAS AUTOPLAN--
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('05/01/2019','05/20/2019',1,1,30) --cuota 1
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('06/01/2019','06/20/2019',2,1,31)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('07/01/2019','07/20/2019',3,1,32)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('08/01/2019','08/20/2019',4,1,33)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('09/01/2019','09/20/2019',5,1,34)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('10/01/2019','10/20/2019',6,1,35)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('11/01/2019','11/20/2019',7,1,36)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('12/01/2019','12/20/2019',8,1,37)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('01/01/2020','01/20/2020',9,1,38)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('02/01/2020','02/20/2020',10,1,39)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('03/01/2020','03/20/2020',12,1,40)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('04/01/2020','04/20/2020',12,1,41)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('05/01/2020','05/20/2020',13,1,42)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('06/01/2020','06/20/2020',14,1,43)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('07/01/2019','07/20/2020',15,1,44)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('08/01/2020','08/20/2020',16,1,45)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('09/01/2020','09/20/2020',17,1,46)
+INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('10/01/2020','10/20/2020',18,1,47) --cuota 18
+
+
 
 
 --MODIFICACIONES A LA ESTRUCTURA ORIGINAL--
