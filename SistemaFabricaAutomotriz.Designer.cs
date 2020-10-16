@@ -32,6 +32,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.tabProductos2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnNuevoProducto = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabFacturas = new System.Windows.Forms.TabPage();
@@ -40,20 +44,17 @@
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnNuevoProducto = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabAutoplanes = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabProductos2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabFacturas.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -101,6 +102,45 @@
             this.tabProductos2.TabIndex = 1;
             this.tabProductos2.Text = "Productos";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 87);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(742, 216);
+            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // btnNuevoProducto
+            // 
+            this.btnNuevoProducto.Location = new System.Drawing.Point(22, 341);
+            this.btnNuevoProducto.Name = "btnNuevoProducto";
+            this.btnNuevoProducto.Size = new System.Drawing.Size(106, 23);
+            this.btnNuevoProducto.TabIndex = 2;
+            this.btnNuevoProducto.Text = "Nuevo Producto";
+            this.btnNuevoProducto.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Location = new System.Drawing.Point(6, 19);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(211, 53);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Categoria";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 19);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(187, 21);
+            this.comboBox1.TabIndex = 0;
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
@@ -125,6 +165,7 @@
             // 
             // tabFacturas
             // 
+            this.tabFacturas.Controls.Add(this.button1);
             this.tabFacturas.Controls.Add(this.btNuevaFact);
             this.tabFacturas.Location = new System.Drawing.Point(4, 22);
             this.tabFacturas.Name = "tabFacturas";
@@ -188,43 +229,6 @@
             this.tabPage4.Text = "Compras";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(6, 19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(211, 53);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Categoria";
-            // 
-            // btnNuevoProducto
-            // 
-            this.btnNuevoProducto.Location = new System.Drawing.Point(22, 341);
-            this.btnNuevoProducto.Name = "btnNuevoProducto";
-            this.btnNuevoProducto.Size = new System.Drawing.Size(106, 23);
-            this.btnNuevoProducto.TabIndex = 2;
-            this.btnNuevoProducto.Text = "Nuevo Producto";
-            this.btnNuevoProducto.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(742, 216);
-            this.dataGridView1.TabIndex = 3;
-            // 
             // tabAutoplanes
             // 
             this.tabAutoplanes.Location = new System.Drawing.Point(4, 22);
@@ -234,6 +238,17 @@
             this.tabAutoplanes.TabIndex = 4;
             this.tabAutoplanes.Text = "Autoplanes";
             this.tabAutoplanes.UseVisualStyleBackColor = true;
+            this.tabAutoplanes.Click += new System.EventHandler(this.tabAutoplanes_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(95, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DistribuidoraCrelech
             // 
@@ -243,15 +258,16 @@
             this.Controls.Add(this.tabPrincipal);
             this.Name = "DistribuidoraCrelech";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.DistribuidoraCrelech_Load);
             this.tabPage2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabProductos2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabFacturas.ResumeLayout(false);
             this.tabPrincipal.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,6 +291,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage tabAutoplanes;
+        private System.Windows.Forms.Button button1;
     }
 }
 

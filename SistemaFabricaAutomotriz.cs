@@ -12,6 +12,7 @@ namespace DistribuidoraCrelech
 {
     public partial class DistribuidoraCrelech : Form
     {
+        public ConexionDatos cxDato = new ConexionDatos();
         public DistribuidoraCrelech()
         {
             InitializeComponent();
@@ -31,6 +32,32 @@ namespace DistribuidoraCrelech
         {
             Form NuevaFactura = new NuevaFactura();
             NuevaFactura.Show();
+        }
+
+        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabAutoplanes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DistribuidoraCrelech_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Consultas consulta = new Consultas(cxDato);
+            consulta.Show();
         }
     }
 }

@@ -62,6 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="ConexionDatos.cs" />
+    <Compile Include="Consultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas.Designer.cs">
+      <DependentUpon>Consultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="SistemaFabricaAutomotriz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +84,9 @@
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Consultas.resx">
+      <DependentUpon>Consultas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SistemaFabricaAutomotriz.resx">
       <DependentUpon>SistemaFabricaAutomotriz.cs</DependentUpon>
     </EmbeddedResource>

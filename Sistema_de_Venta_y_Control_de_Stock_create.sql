@@ -1432,6 +1432,23 @@ from CUOTAS_AUOTPLAN ca join FACTURAS fa on ca.id_factura = fa.id_factura join D
 		join AUTOPLANES au on ca.id_autoplan = au.id_autoplan join ORDEN_PEDIDO op on au.id_pedido = op.id_pedido join CLIENTES cl on cl.id_cliente = op.id_cliente
 group by ca.id_autoplan,  cl.nombre + ' ' + cl.apellido,au.cant_cuota
 
+
+----------------------------------------------PROCEDIMIENTOS ALMACENADOS ----------------------------------------------------
+
+--Productos que no se vendieron
+create proc sp_productos_sn_ventas
+	@id_tipo_producto int = 0 
+as
+select	p.descripcion
+from	PRODUCTOS p
+where	not exists (select	d.id_producto
+					from	DETALLES_FACTURAS d
+					Where	d.id_producto = p.id_producto)
+		and id_tipo_producto = @id_tipo_producto
+
+exec sp_productos_sn_ventas @id_tipo_producto = 2
+
+
 --MODIFICACIONES A LA ESTRUCTURA ORIGINAL--
 
 --ALTER TABLE BARRIOS
