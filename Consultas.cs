@@ -33,10 +33,10 @@ namespace DistribuidoraCrelech
             string secuenciaSql = "sp_productos_sn_ventas";
             SqlCommand comandoTipPro = new SqlCommand(secuenciaSql);
             comandoTipPro.CommandType = CommandType.StoredProcedure;
-
             comandoTipPro.Parameters.AddWithValue("@id_tipo_producto", cmbTipoProdu.SelectedValue);
 
             dgv1.DataSource = cxDato.MostrarDato(comandoTipPro);
         }
+
     }
 }

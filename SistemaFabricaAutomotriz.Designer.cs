@@ -39,13 +39,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabFacturas = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btNuevaFact = new System.Windows.Forms.Button();
             this.tabHistorial = new System.Windows.Forms.TabPage();
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabAutoplanes = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabProductos2.SuspendLayout();
@@ -175,6 +176,16 @@
             this.tabFacturas.Text = "Facturas";
             this.tabFacturas.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(179, 354);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btNuevaFact
             // 
             this.btNuevaFact.Location = new System.Drawing.Point(23, 354);
@@ -202,6 +213,7 @@
             this.tabPrincipal.Controls.Add(this.tabPage3);
             this.tabPrincipal.Controls.Add(this.tabPage4);
             this.tabPrincipal.Controls.Add(this.tabAutoplanes);
+            this.tabPrincipal.Controls.Add(this.tabPage5);
             this.tabPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tabPrincipal.Name = "tabPrincipal";
@@ -240,15 +252,15 @@
             this.tabAutoplanes.UseVisualStyleBackColor = true;
             this.tabAutoplanes.Click += new System.EventHandler(this.tabAutoplanes_Click);
             // 
-            // button1
+            // tabPage5
             // 
-            this.button1.Location = new System.Drawing.Point(95, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(788, 429);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "Reportes";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // DistribuidoraCrelech
             // 
@@ -292,6 +304,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage tabAutoplanes;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }
 
