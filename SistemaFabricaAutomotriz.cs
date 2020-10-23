@@ -56,8 +56,12 @@ namespace DistribuidoraCrelech
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Consultas consulta = new Consultas(cxDato);
-            consulta.Show();
+         
+        }
+
+        private void tabFacturas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

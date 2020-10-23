@@ -44,7 +44,7 @@ namespace DistribuidoraCrelech
             conexion.Close();
         }
 
-        public DataTable MostrarDato(SqlCommand comando)
+        public DataTable MostrarDatoCnParametro(SqlCommand comando)
         {
             
             DataTable tabla = new DataTable();
@@ -71,5 +71,17 @@ namespace DistribuidoraCrelech
            // combo.SelectedIndex = 0;
         }
 
+        public DataTable LeerTabla(string nombreTabla)
+        {
+
+            DataTable tabla = new DataTable();
+            comando.Connection = conexion;
+            Conectar();
+            comando.CommandText = "SELECT * FROM " + @nombreTabla;
+            comando.Parameters.AddWithValue(@nombreTabla, nombreTabla);
+            tabla.Load(comando.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
     }
 }

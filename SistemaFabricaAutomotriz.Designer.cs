@@ -175,6 +175,7 @@
             this.tabFacturas.TabIndex = 0;
             this.tabFacturas.Text = "Facturas";
             this.tabFacturas.UseVisualStyleBackColor = true;
+            this.tabFacturas.Click += new System.EventHandler(this.tabFacturas_Click);
             // 
             // button1
             // 

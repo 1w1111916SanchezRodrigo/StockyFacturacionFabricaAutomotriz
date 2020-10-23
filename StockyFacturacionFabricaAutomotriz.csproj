@@ -50,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,11 +64,61 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="ConexionDatos.cs" />
-    <Compile Include="Consultas.cs">
+    <Compile Include="ConsultasForms\frmConsulta2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas.Designer.cs">
-      <DependentUpon>Consultas.cs</DependentUpon>
+    <Compile Include="ConsultasForms\frmConsulta2.Designer.cs">
+      <DependentUpon>frmConsulta2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta3.Designer.cs">
+      <DependentUpon>frmConsulta3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta4.Designer.cs">
+      <DependentUpon>frmConsulta4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta5.Designer.cs">
+      <DependentUpon>frmConsulta5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta6.Designer.cs">
+      <DependentUpon>frmConsulta6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta7.Designer.cs">
+      <DependentUpon>frmConsulta7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta8.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta8.Designer.cs">
+      <DependentUpon>frmConsulta8.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="frmConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultas.Designer.cs">
+      <DependentUpon>frmConsultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultasForms\frmConsulta1.Designer.cs">
+      <DependentUpon>frmConsulta1.cs</DependentUpon>
     </Compile>
     <Compile Include="SistemaFabricaAutomotriz.cs">
       <SubType>Form</SubType>
@@ -84,8 +135,14 @@
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Consultas.resx">
-      <DependentUpon>Consultas.cs</DependentUpon>
+    <EmbeddedResource Include="ConsultasForms\frmConsulta4.resx">
+      <DependentUpon>frmConsulta4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultas.resx">
+      <DependentUpon>frmConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultasForms\frmConsulta1.resx">
+      <DependentUpon>frmConsulta1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SistemaFabricaAutomotriz.resx">
       <DependentUpon>SistemaFabricaAutomotriz.cs</DependentUpon>

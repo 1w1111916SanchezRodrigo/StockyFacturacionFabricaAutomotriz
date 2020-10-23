@@ -1417,6 +1417,58 @@ INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_fac
 INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_factura) VALUES ('10/01/2020','10/20/2020',18,1,47) --cuota 18
 
 
+
+----------------------------------------------PROCEDIMIENTOS ALMACENADOS ----------------------------------------------------
+
+--Productos que no se vendieron consutla n4
+create proc sp_productos_sn_ventas
+	@id_tipo_producto int = 0 
+as
+select	p.descripcion
+from	PRODUCTOS p
+where	not exists (select	d.id_producto
+					from	DETALLES_FACTURAS d
+					Where	d.id_producto = p.id_producto)
+		and id_tipo_producto = @id_tipo_producto
+
+drop proc sp_productos_sn_ventas
+exec sp_productos_sn_ventas @id_tipo_producto = 2
+
+--7 - Porcentaje de compras por tipo de cliente
+select count(f.id_factura)*100.00/(select count(*)
+									from FACTURAS fa
+									) Porcentaje,
+									'Consumidorfinal' Tipo
+from FACTURAS f join CLIENTES c on c.id_cliente = f.id_cliente
+join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
+where tc.id_tipo_cliente = 1
+union
+select count(f.id_factura)*100.00/(select count(*)
+									from FACTURAS fa
+									), 'Empresa'
+from FACTURAS f join CLIENTES c on c.id_cliente = f.id_cliente
+join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
+where tc.id_tipo_cliente = 2
+union
+select count(f.id_factura)*100.00/(select count(*)
+									from FACTURAS fa
+									), 'Concesionaria'
+from FACTURAS f join CLIENTES c on c.id_cliente = f.id_cliente
+join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
+where tc.id_tipo_cliente = 3
+union
+select count(f.id_factura)*100.00/(select count(*)
+									from FACTURAS fa
+									), 'Venta de autopartes'
+from FACTURAS f
+join CLIENTES c on c.id_cliente = f.id_cliente
+join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
+where tc.id_tipo_cliente = 4
+
+
+
+
+
 --ALGUNAS CONSULTAS
 
 select *
@@ -1432,21 +1484,6 @@ from CUOTAS_AUOTPLAN ca join FACTURAS fa on ca.id_factura = fa.id_factura join D
 		join AUTOPLANES au on ca.id_autoplan = au.id_autoplan join ORDEN_PEDIDO op on au.id_pedido = op.id_pedido join CLIENTES cl on cl.id_cliente = op.id_cliente
 group by ca.id_autoplan,  cl.nombre + ' ' + cl.apellido,au.cant_cuota
 
-
-----------------------------------------------PROCEDIMIENTOS ALMACENADOS ----------------------------------------------------
-
---Productos que no se vendieron
-create proc sp_productos_sn_ventas
-	@id_tipo_producto int = 0 
-as
-select	p.descripcion
-from	PRODUCTOS p
-where	not exists (select	d.id_producto
-					from	DETALLES_FACTURAS d
-					Where	d.id_producto = p.id_producto)
-		and id_tipo_producto = @id_tipo_producto
-
-exec sp_productos_sn_ventas @id_tipo_producto = 2
 
 
 --MODIFICACIONES A LA ESTRUCTURA ORIGINAL--

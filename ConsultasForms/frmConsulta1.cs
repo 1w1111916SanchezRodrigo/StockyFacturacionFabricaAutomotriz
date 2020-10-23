@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,15 +9,15 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DistribuidoraCrelech
+namespace DistribuidoraCrelech.ConsultasForms
 {
-    public partial class Consultas : Form
+    public partial class frmConsulta1 : Form
     {
-        ConexionDatos cxDato;
-        public Consultas(ConexionDatos cxDato)
+        ConexionDatos cxDato ;
+        public frmConsulta1()
         {
             InitializeComponent();
-            this.cxDato = cxDato;
+            cxDato = new ConexionDatos();
         }
 
         private void Consultas_Load(object sender, EventArgs e)
@@ -35,8 +34,12 @@ namespace DistribuidoraCrelech
             comandoTipPro.CommandType = CommandType.StoredProcedure;
             comandoTipPro.Parameters.AddWithValue("@id_tipo_producto", cmbTipoProdu.SelectedValue);
 
-            dgv1.DataSource = cxDato.MostrarDato(comandoTipPro);
+            dgv1.DataSource = cxDato.MostrarDatoCnParametro(comandoTipPro);
         }
 
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
