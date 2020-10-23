@@ -1136,7 +1136,6 @@ insert into VENDEDORES (nombre, apellido, id_barrio, calle, altura, id_tipo_iden
 insert into VENDEDORES (nombre, apellido, id_barrio, calle, altura, id_tipo_identificacion, doc, telefono) values ('YOHANA ','PLACERES ',1,'MURCIA',2175,1,43273718,3516374493)
 
 
-
 ---------------------PRODUCTOS------------------------------
 --TIPOS PRODUCTOS
 INSERT INTO TIPOS_PRODUCTOS (descripcion) VALUES ('Autoparte')	--1
@@ -1326,8 +1325,11 @@ INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factur
 INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/02/2020',1,3,0,2)	--46 17 cuota autoplan 1
 INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/02/2020',1,3,0,2)	--47 18 cuota autoplan 1
 
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/14/2019',25,4,0,2)	--48 usuraio fiinal
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/14/2019',26,4,0,2)	--49 empresa
 
-
+select *
+from CLIENTES
 --Detalles Facturas
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(1,381,10,40,10)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(2,261,10,54,5)
@@ -1390,8 +1392,9 @@ insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_p
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(46,77413.435,1,1,0)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(47,77413.435,1,1,0)
 
-select *
-from PRODUCTOS
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(48,379,1,58,0) --usuario final y venta de autoparte
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(49,379,1,58,0)
+
 
 -------------------------------AUTOPLANES--------------------
 INSERT INTO AUTOPLANES(observaciones,cant_cuota,interes,id_pedido) VALUES ('Entrega con todas las cuotas pagas',20,10,6) --1 20 cuotas con interes de 10% id pedido 6
@@ -1434,7 +1437,11 @@ where	not exists (select	d.id_producto
 drop proc sp_productos_sn_ventas
 exec sp_productos_sn_ventas @id_tipo_producto = 2
 
+use fabrica_automotriz
+
 --7 - Porcentaje de compras por tipo de cliente
+create view vw_porcentaje_x_tipo_cliente
+as
 select count(f.id_factura)*100.00/(select count(*)
 									from FACTURAS fa
 									) Porcentaje,
@@ -1463,10 +1470,14 @@ select count(f.id_factura)*100.00/(select count(*)
 from FACTURAS f
 join CLIENTES c on c.id_cliente = f.id_cliente
 join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
-where tc.id_tipo_cliente = 4
+where tc.id_tipo_cliente = 4
 
 
 
+select *
+from vw_porcentaje_x_tipo_cliente
+
+select * from FACTURAS 
 
 
 --ALGUNAS CONSULTAS
