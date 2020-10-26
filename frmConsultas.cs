@@ -80,6 +80,7 @@ namespace DistribuidoraCrelech
 
         private void btnConsulta8_Click(object sender, EventArgs e)
         {
+            labelTitle.Text = "Autopartes con Stock por debajo del mínimo";
             OpenChildForm(new frmConsulta8(), sender);
         }
 
