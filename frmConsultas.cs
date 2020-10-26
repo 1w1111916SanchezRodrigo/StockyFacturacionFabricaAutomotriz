@@ -62,6 +62,7 @@ namespace DistribuidoraCrelech
 
         private void btnConsulta5_Click(object sender, EventArgs e)
         {
+            labelTitle.Text = "Total anual y promedio de facturación mensual de producto";
             OpenChildForm(new frmConsulta5(), sender);
         }
 

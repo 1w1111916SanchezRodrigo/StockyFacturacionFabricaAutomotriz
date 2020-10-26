@@ -141,6 +141,9 @@
     <EmbeddedResource Include="ConsultasForms\frmConsulta4.resx">
       <DependentUpon>frmConsulta4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultasForms\frmConsulta5.resx">
+      <DependentUpon>frmConsulta5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultasForms\frmConsulta6.resx">
       <DependentUpon>frmConsulta6.cs</DependentUpon>
     </EmbeddedResource>

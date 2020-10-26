@@ -74,7 +74,41 @@ namespace DistribuidoraCrelech
            // combo.SelectedIndex = 0;
         }
 
-        
+        public void CargarComboString(ComboBox combo,string consultaSql, string pk, string campoDisplay)
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            comando.CommandText = consultaSql;
+            tabla.Load(comando.ExecuteReader());
+            Desconectar();
+            combo.ValueMember = pk;
+            combo.DataSource = tabla;
+            combo.DisplayMember = campoDisplay;
+            // combo.SelectedIndex = 0;
+        }
+
+        public void CargarComboOpcTodos(ComboBox combo, string nombreTabla, string pk, string campoDisplay)
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            comando.CommandText = "SELECT * FROM " + @nombreTabla;
+            comando.Parameters.AddWithValue(@nombreTabla, nombreTabla);
+            tabla.Load(comando.ExecuteReader());
+            Desconectar();
+
+            combo.ValueMember = pk;
+            combo.DataSource = tabla;
+            combo.DisplayMember = campoDisplay;
+
+            DataRow row = tabla.NewRow();
+            row[pk] = 0;
+            row[campoDisplay] = "<Todos>";
+
+            tabla.Rows.InsertAt(row, 0);
+            combo.SelectedIndex = 0;
+        }
+
+
 
         public DataTable LeerTabla(string nombreTabla)
         {

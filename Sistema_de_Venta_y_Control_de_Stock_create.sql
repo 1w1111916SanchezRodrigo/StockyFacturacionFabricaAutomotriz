@@ -1506,11 +1506,68 @@ join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
 where tc.id_tipo_cliente = 4
 
 
-
 select *
 from vw_porcentaje_x_tipo_cliente
 
-select * from FACTURAS 
+
+--5 - Totales de facturación y promedio de facturación anual de producto
+use FABRICA_AUTOMOTRIZ
+
+select distinct year(f.fecha)
+from	facturas f
+
+create proc sp_mostrar_facturas
+@tipo_producto int = 1,
+@anio int = 2020
+as
+if(@tipo_producto = 1 or @tipo_producto = 2)
+select	f.id_factura 'Cod Factura', f.fecha 'Fecha', str(f.descuento_total) +' %' 'Descuento Total', 
+		CONVERT(decimal(10,2),sum (((df.cantidad*df.precio)*((100.00-df.descuento_producto)/100.00)*
+			(100.00-f.descuento_total)/100.00))) 'Importe total'
+from	facturas f join detalles_facturas df on f.id_factura = df.id_factura 
+		join productos pr on df.id_producto = pr.id_producto join TIPOS_PRODUCTOS tp on tp.id_tipo_producto = pr.id_tipo_producto
+where	pr.id_tipo_producto = @tipo_producto
+		and year(f.fecha) = @anio
+group by  f.id_factura , f.fecha, f.descuento_total
+else
+select	f.id_factura 'Cod Factura', f.fecha 'Fecha', str(f.descuento_total) +' %' 'Descuento Total', 
+		CONVERT(decimal(10,2),sum (((df.cantidad*df.precio)*((100.00-df.descuento_producto)/100.00)*
+			(100.00-f.descuento_total)/100.00))) 'Importe total'
+from	facturas f join detalles_facturas df on f.id_factura = df.id_factura 
+		join productos pr on df.id_producto = pr.id_producto join TIPOS_PRODUCTOS tp on tp.id_tipo_producto = pr.id_tipo_producto
+where	year(f.fecha) = @anio
+group by  f.id_factura , f.fecha, f.descuento_total
+
+
+alter proc sp_tot_factu_y_prom
+@tipo_producto int = 1,
+@anio int = 2020
+as
+if(@tipo_producto = 1 or @tipo_producto = 2)
+select	year(f.fecha) 'Año', 
+		CONVERT(decimal(10,2),sum (((df.cantidad*df.precio)*((100.00-df.descuento_producto)/100.00)*
+			(100.00-f.descuento_total)/100.00))) 'Importe total',
+		 CONVERT(decimal(10,2),sum(((df.cantidad*df.precio)*((100.00-df.descuento_producto)/100.00)*
+			(100.00-f.descuento_total)/100.00))/ count (distinct
+			f.id_factura)) 'Promedio mensual por factura',
+		tp.descripcion 'Tipo de producto'
+from	facturas f join detalles_facturas df on f.id_factura = df.id_factura 
+		join productos pr on df.id_producto = pr.id_producto join TIPOS_PRODUCTOS tp on tp.id_tipo_producto = pr.id_tipo_producto
+where	pr.id_tipo_producto = @tipo_producto
+		and year(f.fecha) = @anio
+group by year(f.fecha),tp.descripcion
+order by 1,2elseselect	year(f.fecha) 'Año', 
+		 CONVERT(decimal(10,2),sum (((df.cantidad*df.precio)*((100.00-df.descuento_producto)/100.00)*
+			(100.00-f.descuento_total)/100.00))) 'Importe total',
+		 CONVERT(decimal(10,2),sum(((df.cantidad*df.precio)*((100.00-df.descuento_producto)/100.00)*
+			(100.00-f.descuento_total)/100.00))/ count (distinct
+			f.id_factura)) 'Promedio mensual por factura'
+from	facturas f join detalles_facturas df on f.id_factura = df.id_factura 
+		join productos pr on df.id_producto = pr.id_producto join TIPOS_PRODUCTOS tp on tp.id_tipo_producto = pr.id_tipo_producto
+where    year(f.fecha) = @anio
+group by year(f.fecha)
+order by 1,2
+exec sp_tot_factu_y_prom 1,2020
 
 
 --ALGUNAS CONSULTAS
