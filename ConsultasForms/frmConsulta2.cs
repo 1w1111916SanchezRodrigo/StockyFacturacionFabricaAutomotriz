@@ -43,7 +43,7 @@ namespace DistribuidoraCrelech.ConsultasForms
 
             lstPromedio.DataSource = cxDato.MostrarDatoCnParametro(comando);
             lstPromedio.DisplayMember = "Promedio";
-
+            lstPromedio.SelectedIndex = -1;
 
 
 
