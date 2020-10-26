@@ -32,5 +32,10 @@ namespace DistribuidoraCrelech.ConsultasForms
 
             dgvVehiculosEntregados.DataSource = cxDato.MostrarDatoCnParametro(comandoTipo);
         }
+
+        private void frmConsulta6_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -65,10 +65,11 @@
             // dgv1
             // 
             this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Location = new System.Drawing.Point(257, 25);
             this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(200, 149);
+            this.dgv1.Size = new System.Drawing.Size(200, 243);
             this.dgv1.TabIndex = 3;
             // 
             // frmConsulta1

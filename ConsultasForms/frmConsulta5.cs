@@ -12,9 +12,16 @@ namespace DistribuidoraCrelech.ConsultasForms
 {
     public partial class frmConsulta5 : Form
     {
+        
         public frmConsulta5()
         {
             InitializeComponent();
+            
+        }
+
+        private void frmConsulta5_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
