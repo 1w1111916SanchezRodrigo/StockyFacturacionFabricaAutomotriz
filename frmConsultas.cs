@@ -39,11 +39,13 @@ namespace DistribuidoraCrelech
 
         private void btnConsulta1_Click(object sender, EventArgs e)
         {
+            labelTitle.Text = "Productos que no se vendieron";
             OpenChildForm(new frmConsulta1(), sender);
         }
 
         private void btnConsulta2_Click(object sender, EventArgs e)
         {
+            labelTitle.Text = "Mostrar el producto cuyo precio sea mayor al promedio de precio de los productos";  
             OpenChildForm(new frmConsulta2(), sender);
         }
 
@@ -76,6 +78,16 @@ namespace DistribuidoraCrelech
         private void btnConsulta8_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmConsulta8(), sender);
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmConsultas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

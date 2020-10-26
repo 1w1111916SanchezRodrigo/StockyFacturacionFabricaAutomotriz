@@ -71,6 +71,8 @@ namespace DistribuidoraCrelech
            // combo.SelectedIndex = 0;
         }
 
+        
+
         public DataTable LeerTabla(string nombreTabla)
         {
 

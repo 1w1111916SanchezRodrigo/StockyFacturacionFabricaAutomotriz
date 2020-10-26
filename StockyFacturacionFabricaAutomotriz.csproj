@@ -135,6 +135,9 @@
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConsultasForms\frmConsulta2.resx">
+      <DependentUpon>frmConsulta2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultasForms\frmConsulta4.resx">
       <DependentUpon>frmConsulta4.cs</DependentUpon>
     </EmbeddedResource>

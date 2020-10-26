@@ -221,6 +221,7 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(580, 326);
             this.panelDesktop.TabIndex = 2;
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // frmConsultas
             // 
@@ -232,6 +233,7 @@
             this.Controls.Add(this.panelConsulta);
             this.Name = "frmConsultas";
             this.Text = "Consultas2";
+            this.Load += new System.EventHandler(this.frmConsultas_Load);
             this.panelConsulta.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
             this.ResumeLayout(false);

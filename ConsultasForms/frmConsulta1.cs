@@ -29,12 +29,15 @@ namespace DistribuidoraCrelech.ConsultasForms
         }
         private void cmbTipoProdu_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             string secuenciaSql = "sp_productos_sn_ventas";
             SqlCommand comandoTipPro = new SqlCommand(secuenciaSql);
             comandoTipPro.CommandType = CommandType.StoredProcedure;
             comandoTipPro.Parameters.AddWithValue("@id_tipo_producto", cmbTipoProdu.SelectedValue);
-
+            
             dgv1.DataSource = cxDato.MostrarDatoCnParametro(comandoTipPro);
+
+
         }
 
         private void chart1_Click(object sender, EventArgs e)

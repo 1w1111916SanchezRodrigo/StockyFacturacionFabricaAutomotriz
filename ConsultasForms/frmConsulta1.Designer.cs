@@ -64,13 +64,14 @@
             // 
             // dgv1
             // 
+            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Location = new System.Drawing.Point(257, 25);
             this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(210, 149);
+            this.dgv1.Size = new System.Drawing.Size(200, 149);
             this.dgv1.TabIndex = 3;
             // 
-            // frmConsultas
+            // frmConsulta1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,7 +80,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbTipoProdu);
-            this.Name = "frmConsultas";
+            this.Name = "frmConsulta1";
             this.Text = "Consultas";
             this.Load += new System.EventHandler(this.Consultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
