@@ -1425,6 +1425,19 @@ INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_fac
 
 ----------------------------------------------PROCEDIMIENTOS ALMACENADOS ----------------------------------------------------
 
+--1- Mostrar las autopartes cuyo precio sea mayor al promedio de precio de autopartes 
+
+CREATE proc PA_Producto_Mayor_Promedio  
+@tipo int = 0  
+as  
+select   id_producto 'Id', descripcion 'Descripcion', precio_venta  
+from     productos  
+where    id_tipo_producto = @tipo   
+    and  precio_venta    > ( select avg(precio_venta)  
+              from productos  
+                                        where id_tipo_producto = @tipo)
+exec PA_Producto_Mayor_promedio @tipo = 1 --@tipo = 2
+
 
 -- 6 - Cantidad de vehículos entregados por meses entre las fechas '01/01/2020' y '07/31/2020’ 
 
