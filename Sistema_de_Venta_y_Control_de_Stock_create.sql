@@ -1159,6 +1159,7 @@ INSERT INTO MATERIALES(descripcion) VALUES ('Acero') --2
 INSERT INTO MATERIALES(descripcion) VALUES ('Aluminio') --3
 INSERT INTO MATERIALES(descripcion) VALUES ('Liquido') --4
 
+
 --PRODUCTOS
 INSERT INTO productos(descripcion, id_tipo_producto, id_rubro, id_color, stock, stock_minimo, precio_venta, precio_mayo) values ('UNO WAY',2,2,1,NULL,NULL,1407517,1196389.45)
 INSERT INTO productos(descripcion, id_tipo_producto, id_rubro, id_color, stock, stock_minimo, precio_venta, precio_mayo) values ('CRONOS',2,2,2,NULL,NULL,1505283,1279490.55)
@@ -1273,6 +1274,7 @@ INSERT INTO TIPOS_FACTURAS(descripcion) VALUES ('NOTA DE CREDITO C')
 INSERT INTO TIPOS_FACTURAS(descripcion) VALUES ('NOTA DE DEBITO A')
 INSERT INTO TIPOS_FACTURAS(descripcion) VALUES ('NOTA DE DEBITO B')
 INSERT INTO TIPOS_FACTURAS(descripcion) VALUES ('NOTA DE DEBITO C')
+
 
 --FACTURAS
 INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/12/2020',1,1,10,2)	--1
@@ -1423,6 +1425,24 @@ INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_fac
 
 ----------------------------------------------PROCEDIMIENTOS ALMACENADOS ----------------------------------------------------
 
+
+-- 6 - Cantidad de vehículos entregados por meses entre las fechas '01/01/2020' y '07/31/2020’ 
+
+Create procedure sp_vehiculos_entregados
+@fecha1 dateTime = '01/01/1900',
+@fecha2 dateTime = '31/12/2999'
+as
+Select month(op.fecha_entrega) MES, Count (distinct op.id_pedido) 'Cantidad de vehículos entregados'
+from ORDEN_PEDIDO op join DETALLE_PEDIDO dp on op.id_pedido = dp.id_pedido 
+join PRODUCTOS pr on pr.id_producto = dp.id_producto
+where op.estado = 1 
+and op.fecha_entrega between @fecha1 and @fecha2
+group by month(op.fecha_entrega)
+
+
+execute sp_vehiculos_entregados '01/01/2020', '12/31/2020'
+
+
 --Productos que no se vendieron consutla n4
 create proc sp_productos_sn_ventas
 	@id_tipo_producto int = 0 
@@ -1483,7 +1503,8 @@ select * from FACTURAS
 --ALGUNAS CONSULTAS
 
 select *
-from FACTURAS
+from FACTURAS, DETALLES_FACTURAS
+ORDER BY 2
 
 select  fa.id_factura
 from FACTURAS fa

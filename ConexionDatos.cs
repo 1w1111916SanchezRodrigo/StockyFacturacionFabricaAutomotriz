@@ -21,7 +21,8 @@ namespace DistribuidoraCrelech
             conexion = new SqlConnection();
             comando = new SqlCommand();
             cadenaConexion = "Data Source=fabricaautomotriz.cbqr9awpp7z2.us-east-1.rds.amazonaws.com,1433;Initial Catalog=FABRICA_AUTOMOTRIZ;User ID=admin;password=fabricaautomotriz";
-          //  cadenaConexion = "Data Source = localhost; Initial Catalog = FABRICA_AUTOMOTRIZ; Integrated Security = True"; //Rodri
+            //  cadenaConexion = "Data Source = localhost; Initial Catalog = FABRICA_AUTOMOTRIZ; Integrated Security = True"; //Rodri
+            
         }
         public ConexionDatos (string cadenaConexion)
         {
@@ -48,7 +49,9 @@ namespace DistribuidoraCrelech
         {
             
             DataTable tabla = new DataTable();
+            
             comando.Connection = conexion;
+            conexion.ConnectionString = cadenaConexion;
             this.comando = comando;
             SqlDataAdapter adapter = new SqlDataAdapter(comando);
             conexion.Open();
