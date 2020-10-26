@@ -28,12 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha2 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvVehiculosEntregados = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculosEntregados)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dtpFecha1
+            // 
+            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha1.Location = new System.Drawing.Point(72, 57);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.Size = new System.Drawing.Size(88, 20);
+            this.dtpFecha1.TabIndex = 0;
+            // 
+            // dtpFecha2
+            // 
+            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha2.Location = new System.Drawing.Point(271, 57);
+            this.dtpFecha2.Name = "dtpFecha2";
+            this.dtpFecha2.Size = new System.Drawing.Size(88, 20);
+            this.dtpFecha2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "FECHA 1:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(211, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "FECHA 2:";
+            // 
+            // dgvVehiculosEntregados
+            // 
+            this.dgvVehiculosEntregados.AllowUserToAddRows = false;
+            this.dgvVehiculosEntregados.AllowUserToDeleteRows = false;
+            this.dgvVehiculosEntregados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVehiculosEntregados.Location = new System.Drawing.Point(15, 89);
+            this.dgvVehiculosEntregados.Name = "dgvVehiculosEntregados";
+            this.dgvVehiculosEntregados.ReadOnly = true;
+            this.dgvVehiculosEntregados.Size = new System.Drawing.Size(363, 240);
+            this.dgvVehiculosEntregados.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(22, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(328, 24);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Cantidad de vehiculos entregados";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(197, 335);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(119, 35);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(72, 335);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(119, 35);
+            this.btnConsultar.TabIndex = 7;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // frmConsulta6
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(393, 382);
+            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dgvVehiculosEntregados);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpFecha2);
+            this.Controls.Add(this.dtpFecha1);
+            this.Name = "frmConsulta6";
             this.Text = "frmConsulta6";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculosEntregados)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DateTimePicker dtpFecha1;
+        private System.Windows.Forms.DateTimePicker dtpFecha2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvVehiculosEntregados;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnConsultar;
     }
 }
