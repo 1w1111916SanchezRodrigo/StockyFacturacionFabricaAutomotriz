@@ -67,6 +67,7 @@ namespace DistribuidoraCrelech
 
         private void btnConsulta6_Click(object sender, EventArgs e)
         {
+            labelTitle.Text = "Cantidad de vehiculos entregados";
             OpenChildForm(new frmConsulta6(), sender);
         }
 

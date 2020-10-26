@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvVehiculosEntregados = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculosEntregados)).BeginInit();
@@ -42,7 +41,7 @@
             // dtpFecha1
             // 
             this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(72, 57);
+            this.dtpFecha1.Location = new System.Drawing.Point(143, 33);
             this.dtpFecha1.Name = "dtpFecha1";
             this.dtpFecha1.Size = new System.Drawing.Size(88, 20);
             this.dtpFecha1.TabIndex = 0;
@@ -50,7 +49,7 @@
             // dtpFecha2
             // 
             this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(271, 57);
+            this.dtpFecha2.Location = new System.Drawing.Point(342, 33);
             this.dtpFecha2.Name = "dtpFecha2";
             this.dtpFecha2.Size = new System.Drawing.Size(88, 20);
             this.dtpFecha2.TabIndex = 1;
@@ -58,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 63);
+            this.label1.Location = new System.Drawing.Point(83, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 2;
@@ -67,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(211, 63);
+            this.label2.Location = new System.Drawing.Point(282, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 3;
@@ -78,25 +77,15 @@
             this.dgvVehiculosEntregados.AllowUserToAddRows = false;
             this.dgvVehiculosEntregados.AllowUserToDeleteRows = false;
             this.dgvVehiculosEntregados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVehiculosEntregados.Location = new System.Drawing.Point(15, 89);
+            this.dgvVehiculosEntregados.Location = new System.Drawing.Point(86, 65);
             this.dgvVehiculosEntregados.Name = "dgvVehiculosEntregados";
             this.dgvVehiculosEntregados.ReadOnly = true;
-            this.dgvVehiculosEntregados.Size = new System.Drawing.Size(363, 240);
+            this.dgvVehiculosEntregados.Size = new System.Drawing.Size(366, 184);
             this.dgvVehiculosEntregados.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(328, 24);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Cantidad de vehiculos entregados";
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(197, 335);
+            this.btnSalir.Location = new System.Drawing.Point(259, 255);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(119, 35);
             this.btnSalir.TabIndex = 6;
@@ -105,7 +94,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(72, 335);
+            this.btnConsultar.Location = new System.Drawing.Point(134, 255);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(119, 35);
             this.btnConsultar.TabIndex = 7;
@@ -117,10 +106,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 382);
+            this.ClientSize = new System.Drawing.Size(539, 382);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvVehiculosEntregados);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -141,7 +129,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvVehiculosEntregados;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnConsultar;
     }
