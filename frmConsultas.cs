@@ -51,6 +51,7 @@ namespace DistribuidoraCrelech
 
         private void btnConsulta3_Click(object sender, EventArgs e)
         {
+            labelTitle.Text = "Primer factura emitida y el importe de la factura de cada cliente cuyo apellido no empieza con";
             OpenChildForm(new frmConsulta3(), sender);
         }
 

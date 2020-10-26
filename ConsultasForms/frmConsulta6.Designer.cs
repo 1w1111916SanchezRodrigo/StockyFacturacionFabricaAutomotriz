@@ -76,6 +76,8 @@
             // 
             this.dgvVehiculosEntregados.AllowUserToAddRows = false;
             this.dgvVehiculosEntregados.AllowUserToDeleteRows = false;
+            this.dgvVehiculosEntregados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVehiculosEntregados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvVehiculosEntregados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehiculosEntregados.Location = new System.Drawing.Point(86, 65);
             this.dgvVehiculosEntregados.Name = "dgvVehiculosEntregados";
@@ -116,6 +118,7 @@
             this.Controls.Add(this.dtpFecha1);
             this.Name = "frmConsulta6";
             this.Text = "frmConsulta6";
+            this.Load += new System.EventHandler(this.frmConsulta6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculosEntregados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
