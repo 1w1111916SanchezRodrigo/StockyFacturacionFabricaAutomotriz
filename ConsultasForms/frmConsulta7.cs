@@ -28,23 +28,21 @@ namespace DistribuidoraCrelech.ConsultasForms
         private void actualizarInfo() {
             string consultaSQL = "pa_facturas_importe_mayor";
             int a = 0;
-            try
+            if (txtImporte.Text == "")
             {
-                a = int.Parse(txtImporte.Text);
+                MessageBox.Show("Debe ingresar un número");
+            }
+            else {
                 
-        }
-            catch (FormatException )
-            {
-                MessageBox.Show("Debe ingresar un Número");
-            }
-            
-            try
-            {
-                a = int.Parse(txtImporte.Text);
-            }
-            catch (OverflowException)
-            {
-                MessageBox.Show("El numero es demasiado grande, Elija otro");
+                try
+                {
+                    a = int.Parse(txtImporte.Text);
+                }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("El numero es demasiado grande, Elija otro");
+                    txtImporte.Clear();
+                }
             }
 
 
