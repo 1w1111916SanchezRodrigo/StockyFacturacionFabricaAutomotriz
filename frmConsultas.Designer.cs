@@ -68,7 +68,7 @@
             this.btnConsulta8.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsulta8.FlatAppearance.BorderSize = 0;
             this.btnConsulta8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta8.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsulta8.Location = new System.Drawing.Point(0, 355);
             this.btnConsulta8.Name = "btnConsulta8";
@@ -83,7 +83,7 @@
             this.btnConsulta7.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsulta7.FlatAppearance.BorderSize = 0;
             this.btnConsulta7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta7.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsulta7.Location = new System.Drawing.Point(0, 315);
             this.btnConsulta7.Name = "btnConsulta7";
@@ -98,7 +98,7 @@
             this.btnConsulta6.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsulta6.FlatAppearance.BorderSize = 0;
             this.btnConsulta6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta6.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsulta6.Location = new System.Drawing.Point(0, 275);
             this.btnConsulta6.Name = "btnConsulta6";
@@ -113,7 +113,7 @@
             this.btnConsulta5.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsulta5.FlatAppearance.BorderSize = 0;
             this.btnConsulta5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta5.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsulta5.Location = new System.Drawing.Point(0, 235);
             this.btnConsulta5.Name = "btnConsulta5";
@@ -128,7 +128,7 @@
             this.btnConsulta4.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsulta4.FlatAppearance.BorderSize = 0;
             this.btnConsulta4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta4.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsulta4.Location = new System.Drawing.Point(0, 195);
             this.btnConsulta4.Name = "btnConsulta4";
@@ -143,7 +143,7 @@
             this.btnConsulta3.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsulta3.FlatAppearance.BorderSize = 0;
             this.btnConsulta3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta3.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsulta3.Location = new System.Drawing.Point(0, 155);
             this.btnConsulta3.Name = "btnConsulta3";
@@ -158,7 +158,7 @@
             this.btnConsulta2.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsulta2.FlatAppearance.BorderSize = 0;
             this.btnConsulta2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta2.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsulta2.Location = new System.Drawing.Point(0, 115);
             this.btnConsulta2.Name = "btnConsulta2";
@@ -173,7 +173,7 @@
             this.btnConsulta1.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsulta1.FlatAppearance.BorderSize = 0;
             this.btnConsulta1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta1.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsulta1.Location = new System.Drawing.Point(0, 75);
             this.btnConsulta1.Name = "btnConsulta1";
@@ -205,13 +205,13 @@
             // labelTitle
             // 
             this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTitle.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelTitle.Location = new System.Drawing.Point(0, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(580, 75);
             this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "Eliga la consulta";
+            this.labelTitle.Text = "Elija la consulta";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktop

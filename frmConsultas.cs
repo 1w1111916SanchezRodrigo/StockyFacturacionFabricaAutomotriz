@@ -75,6 +75,7 @@ namespace DistribuidoraCrelech
 
         private void btnConsulta7_Click(object sender, EventArgs e)
         {
+            labelTitle.Text = "Facturas cuyo importe es mayor al ingresado por tipo de producto";
             OpenChildForm(new frmConsulta7(), sender);
         }
 

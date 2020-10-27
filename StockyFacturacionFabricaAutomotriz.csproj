@@ -150,6 +150,9 @@
     <EmbeddedResource Include="ConsultasForms\frmConsulta6.resx">
       <DependentUpon>frmConsulta6.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultasForms\frmConsulta7.resx">
+      <DependentUpon>frmConsulta7.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultasForms\frmConsulta8.resx">
       <DependentUpon>frmConsulta8.cs</DependentUpon>
     </EmbeddedResource>
