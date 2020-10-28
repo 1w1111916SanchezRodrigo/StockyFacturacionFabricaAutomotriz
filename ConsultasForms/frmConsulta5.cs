@@ -14,7 +14,6 @@ namespace DistribuidoraCrelech.ConsultasForms
     public partial class frmConsulta5 : Form
     {
         ConexionDatos cxDato = new ConexionDatos();
-        int c = 0;
         public frmConsulta5()
         {
             InitializeComponent();
@@ -22,6 +21,7 @@ namespace DistribuidoraCrelech.ConsultasForms
 
         private void frmConsulta5_Load(object sender, EventArgs e)
         {
+
             string consultaSql = "select distinct year(fecha)'Fecha' from facturas";
             cxDato.CargarComboString(cmbAnio, consultaSql, "Fecha", "Fecha");
             cxDato.CargarComboOpcTodos(cmbTipoProdu, "tipos_productos", "id_tipo_producto", "descripcion");

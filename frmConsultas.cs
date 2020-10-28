@@ -13,7 +13,10 @@ namespace DistribuidoraCrelech
 {
     public partial class frmConsultas : Form
     {
-       
+        //private Button currentButton;
+        //private Random random;
+        //private int tempIndex;
+
         private Form activeForm;
         public frmConsultas()
         {
@@ -22,7 +25,10 @@ namespace DistribuidoraCrelech
 
         private void OpenChildForm(Form childForm, object btnSender)
         {
-            if(activeForm!= null)
+            picMiniLogo.Visible = true;
+            picLogo.Visible = false;
+
+            if (activeForm!= null)
             {
                 activeForm.Close();
             }
@@ -85,14 +91,21 @@ namespace DistribuidoraCrelech
             OpenChildForm(new frmConsulta8(), sender);
         }
 
-        private void panelDesktop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void frmConsultas_Load(object sender, EventArgs e)
         {
-
+            picMiniLogo.Visible = false;
         }
+
+        //private Color SelectThemeColor()
+        //{
+        //    int index = random.Next(ThemeColor.ColorList.Count);
+        //    while (tempIndex == index)
+        //    {
+        //        index = random.Next(ThemeColor.ColorList.Count);
+        //    }
+        //    tempIndex = index;
+        //    string color = ThemeColor.ColorList[index];
+        //    return ColorTranslator.FromHtml(color);
+        //}
     }
 }

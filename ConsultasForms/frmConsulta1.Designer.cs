@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.cmbTipoProdu = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -43,15 +42,6 @@
             this.cmbTipoProdu.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoProdu.TabIndex = 0;
             this.cmbTipoProdu.SelectedIndexChanged += new System.EventHandler(this.cmbTipoProdu_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Productos que no se vendieron";
             // 
             // label2
             // 
@@ -79,7 +69,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbTipoProdu);
             this.Name = "frmConsulta1";
             this.Text = "Consultas";
@@ -93,7 +82,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cmbTipoProdu;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgv1;
     }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartDonut = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartDonut)).BeginInit();
             this.SuspendLayout();
@@ -40,19 +40,22 @@
             this.chartDonut.BackColor = System.Drawing.Color.Transparent;
             this.chartDonut.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight;
             this.chartDonut.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.chartDonut.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartDonut.Legends.Add(legend2);
-            this.chartDonut.Location = new System.Drawing.Point(108, 25);
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chartDonut.ChartAreas.Add(chartArea1);
+            this.chartDonut.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.Name = "Legend1";
+            this.chartDonut.Legends.Add(legend1);
+            this.chartDonut.Location = new System.Drawing.Point(0, 0);
             this.chartDonut.Name = "chartDonut";
             this.chartDonut.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "s1";
-            this.chartDonut.Series.Add(series2);
-            this.chartDonut.Size = new System.Drawing.Size(349, 261);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "s1";
+            this.chartDonut.Series.Add(series1);
+            this.chartDonut.Size = new System.Drawing.Size(564, 287);
             this.chartDonut.TabIndex = 0;
             this.chartDonut.Text = "chart";
             // 
