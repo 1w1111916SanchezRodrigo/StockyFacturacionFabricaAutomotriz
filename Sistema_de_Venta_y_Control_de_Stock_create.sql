@@ -1122,6 +1122,8 @@ Insert into Clientes (nombre,doc, id_tipo_identificacion,id_tipo_cliente,email,t
 Insert into Clientes (nombre,doc, id_tipo_identificacion,id_tipo_cliente,email,telefono,calle,altura,id_barrio) values ('Rodados SRL',30708352760,2,4,'rodadossa@hotmail.com',3513049959,'Luna y Cardenas',1820,7)
 Insert into Clientes (nombre,doc, id_tipo_identificacion,id_tipo_cliente,email,telefono,calle,altura,id_barrio) values ('Cooperativa de Almafuerte',30533553555,2,4,'cooperativasa@hotmail.com',3513928023,'Av Fuerza Aerea ',359,12)
 
+select c.id_cliente, c.nombre, c.apellido, tp.id_tipo_cliente , tp.descripcion
+from clientes c join tipos_clientes tp on c.id_tipo_cliente = tp.id_tipo_cliente
 --VENDEDORES
 
 insert into VENDEDORES (nombre, apellido, id_barrio, calle, altura, id_tipo_identificacion, doc, telefono) values ('FRANCISCO GABRIEL','TALER ',1,'CHACHAPOYAS',2493,1,39691985,3512102520)
@@ -1240,10 +1242,10 @@ INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('
 INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('07/24/2019','03/27/2020',6,1)	--3
 INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('01/14/2020','04/19/2020',4,1)	--4
 INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('04/16/2020','09/20/2020',3,1)	--5
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('04/16/2019',null,1,0) --6 Todavia no se entrego, se pago 18 cuotas autoplanes
 
---Ordenes de pedido de autoplanes
-INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('04/16/2019',null,1,0) --6 Todavia no se entrego, se pago 18 cuotas
-
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('04/16/2019','05/20/2019',31,1)	--7 concesionaria
+INSERT INTO ORDEN_PEDIDO(fecha_pedido,fecha_entrega,id_cliente,estado) VALUES ('05/27/2019','07/27/2019',30,1)  --8 concesionaria
 
 
 --DETALLES PEDIDOS
@@ -1252,9 +1254,12 @@ insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(2,2,1)		--2
 insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(3,3,1)	--3
 insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(4,4,1)	--4
 insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(5,5,1)		--5
---Detalle pedido autoplan
-insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(6,1,1)		--6
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(6,1,1)		--6 autoplan
 
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(7,18,1)		--7
+insert into DETALLE_PEDIDO(id_pedido,id_producto,cantidad)values(8,19,1)		--8
+
+select * from PRODUCTOS
 ------------------------------- FACTURAS ------------------------------------------ YA CARGADO
 
 --FORMAS DE PAGO
@@ -1326,12 +1331,28 @@ INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factur
 INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('08/02/2020',1,3,0,2)	--45 16 cuota autoplan 1
 INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('09/02/2020',1,3,0,2)	--46 17 cuota autoplan 1
 INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('10/02/2020',1,3,0,2)	--47 18 cuota autoplan 1
-
 INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/14/2019',25,4,0,2)	--48 usuraio fiinal
 INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('05/14/2019',26,4,0,2)	--49 empresa
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('06/23/2019',29,2,0,2)	--50 autopartista
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('02/20/2019',33,1,0,2)	--51 autopartista
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura,id_pedido) VALUES ('04/16/2019',31,7,0,2,7)	--52 automovil concesionaria
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura,id_pedido) VALUES ('05/27/2019',30,6,0,2,8)	--53 automovil concesionaria
+
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('12/23/2019',29,2,0,2)	--54 autopartista
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('11/20/2019',33,1,0,2)	--55 autopartista
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('04/23/2020',29,2,0,2)	--56 autopartista
+INSERT INTO FACTURAS(fecha,id_cliente,id_vendedor,descuento_total,id_tipo_factura) VALUES ('01/20/2020',33,1,0,2)	--57 autopartista
+
 
 select *
-from CLIENTES
+from facturas
+select *
+from PRODUCTOS
+where id_tipo_producto = 1
+
+select c.id_cliente, c.nombre, c.apellido, tp.id_tipo_cliente , tp.descripcion
+from clientes c join tipos_clientes tp on c.id_tipo_cliente = tp.id_tipo_cliente
+
 --Detalles Facturas
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(1,381,10,40,10)
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(2,261,10,54,5)
@@ -1396,6 +1417,16 @@ insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_p
 
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(48,379,1,58,0) --usuario final y venta de autoparte
 insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(49,379,1,58,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(50,87.750,1,29,0)	--
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(50,352.5,1,30,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(51,285.75,10,40,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(52,1529017.00,1,18,0)--automovil
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(53,1642119.00,1,19,0)--automovil}
+
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(54,366.00,15,55,0)	--
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(55,160.50,8,50,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(56,363.0,20,47,0)
+insert into DETALLES_FACTURAS(id_factura,precio,cantidad,id_producto,descuento_producto)values(57,159.00,5,45,0)	
 
 
 -------------------------------AUTOPLANES--------------------
@@ -1473,33 +1504,33 @@ exec sp_productos_sn_ventas @id_tipo_producto = 2
 use fabrica_automotriz
 
 --7 - Porcentaje de compras por tipo de cliente
-create view vw_porcentaje_x_tipo_cliente
+alter view vw_porcentaje_x_tipo_cliente
 as
-select count(f.id_factura)*100.00/(select count(*)
+select CONVERT(decimal(10,1),count(f.id_factura)*100.00/(select count(*)
 									from FACTURAS fa
-									) Porcentaje,
+									) )Porcentaje,
 									'Consumidorfinal' Tipo
 from FACTURAS f join CLIENTES c on c.id_cliente = f.id_cliente
 join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
 where tc.id_tipo_cliente = 1
 union
-select count(f.id_factura)*100.00/(select count(*)
+select CONVERT(decimal(10,1),count(f.id_factura)*100.00/(select count(*)
 									from FACTURAS fa
-									), 'Empresa'
+									)), 'Empresa'
 from FACTURAS f join CLIENTES c on c.id_cliente = f.id_cliente
 join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
 where tc.id_tipo_cliente = 2
 union
-select count(f.id_factura)*100.00/(select count(*)
+select CONVERT(decimal(10,1),count(f.id_factura)*100.00/(select count(*)
 									from FACTURAS fa
-									), 'Concesionaria'
+									)), 'Concesionaria'
 from FACTURAS f join CLIENTES c on c.id_cliente = f.id_cliente
 join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
 where tc.id_tipo_cliente = 3
 union
-select count(f.id_factura)*100.00/(select count(*)
+select CONVERT(decimal(10,1), count(f.id_factura)*100.00/(select count(*)
 									from FACTURAS fa
-									), 'Venta de autopartes'
+									)), 'Venta de autopartes'
 from FACTURAS f
 join CLIENTES c on c.id_cliente = f.id_cliente
 join TIPOS_CLIENTES tc on tc.id_tipo_cliente = c.id_tipo_cliente
@@ -1556,7 +1587,9 @@ from	facturas f join detalles_facturas df on f.id_factura = df.id_factura
 where	pr.id_tipo_producto = @tipo_producto
 		and year(f.fecha) = @anio
 group by year(f.fecha),tp.descripcion
-order by 1,2elseselect	year(f.fecha) 'Año', 
+order by 1,2
+else
+select	year(f.fecha) 'Año', 
 		 CONVERT(decimal(10,2),sum (((df.cantidad*df.precio)*((100.00-df.descuento_producto)/100.00)*
 			(100.00-f.descuento_total)/100.00))) 'Importe total',
 		 CONVERT(decimal(10,2),sum(((df.cantidad*df.precio)*((100.00-df.descuento_producto)/100.00)*
@@ -1566,7 +1599,8 @@ from	facturas f join detalles_facturas df on f.id_factura = df.id_factura
 		join productos pr on df.id_producto = pr.id_producto join TIPOS_PRODUCTOS tp on tp.id_tipo_producto = pr.id_tipo_producto
 where    year(f.fecha) = @anio
 group by year(f.fecha)
-order by 1,2
+order by 1,2
+
 exec sp_tot_factu_y_prom 1,2020
 
 
