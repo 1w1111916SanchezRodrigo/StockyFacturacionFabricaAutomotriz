@@ -57,6 +57,7 @@ namespace DistribuidoraCrelech.ConsultasForms
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             actualizarInfo();
+            txtImporte.Clear();
         }
 
         private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
@@ -76,6 +77,8 @@ namespace DistribuidoraCrelech.ConsultasForms
                 e.Handled = true;
             }
         }
+
+        
     }
     }
 
