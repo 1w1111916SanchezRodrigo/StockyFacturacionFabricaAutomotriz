@@ -41,6 +41,7 @@
             // 
             this.dgvCons3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCons3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dgvCons3.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvCons3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCons3.Location = new System.Drawing.Point(65, 70);
             this.dgvCons3.Name = "dgvCons3";

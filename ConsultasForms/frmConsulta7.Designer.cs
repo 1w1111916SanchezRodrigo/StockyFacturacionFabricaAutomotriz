@@ -39,6 +39,8 @@
             // 
             // dgvFacturas
             // 
+            this.dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFacturas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacturas.Location = new System.Drawing.Point(97, 90);
             this.dgvFacturas.Name = "dgvFacturas";
