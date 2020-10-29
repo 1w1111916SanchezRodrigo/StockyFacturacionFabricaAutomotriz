@@ -45,5 +45,10 @@ namespace DistribuidoraCrelech.ConsultasForms
             chartDonut.Series["s1"].Points.AddXY(tabla.Rows[3][1], tabla.Rows[3][0]);
 
         }
+
+        private void chartDonut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

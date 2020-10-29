@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lblImpAnual = new System.Windows.Forms.Label();
@@ -48,19 +49,33 @@
             this.dgvFacturas.AllowUserToDeleteRows = false;
             this.dgvFacturas.AllowUserToResizeRows = false;
             this.dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvFacturas.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFacturas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.dgvFacturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFacturas.ColumnHeadersHeight = 30;
+            this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvFacturas.EnableHeadersVisualStyles = false;
+            this.dgvFacturas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.dgvFacturas.Location = new System.Drawing.Point(12, 55);
             this.dgvFacturas.Name = "dgvFacturas";
             this.dgvFacturas.ReadOnly = true;
+            this.dgvFacturas.RowHeadersVisible = false;
             this.dgvFacturas.ShowEditingIcon = false;
-            this.dgvFacturas.Size = new System.Drawing.Size(540, 154);
+            this.dgvFacturas.Size = new System.Drawing.Size(540, 186);
             this.dgvFacturas.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(349, 228);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(349, 253);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 1;
@@ -70,7 +85,7 @@
             // 
             this.lblImpAnual.AutoSize = true;
             this.lblImpAnual.ForeColor = System.Drawing.Color.Red;
-            this.lblImpAnual.Location = new System.Drawing.Point(464, 257);
+            this.lblImpAnual.Location = new System.Drawing.Point(464, 282);
             this.lblImpAnual.Name = "lblImpAnual";
             this.lblImpAnual.Size = new System.Drawing.Size(35, 13);
             this.lblImpAnual.TabIndex = 2;
@@ -79,7 +94,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(382, 257);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(382, 282);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 3;
@@ -88,7 +104,8 @@
             // lblPromMensual
             // 
             this.lblPromMensual.AutoSize = true;
-            this.lblPromMensual.Location = new System.Drawing.Point(464, 228);
+            this.lblPromMensual.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPromMensual.Location = new System.Drawing.Point(464, 253);
             this.lblPromMensual.Name = "lblPromMensual";
             this.lblPromMensual.Size = new System.Drawing.Size(35, 13);
             this.lblPromMensual.TabIndex = 4;
@@ -107,6 +124,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(9, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 13);
@@ -116,6 +134,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(204, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 13);
@@ -152,7 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 302);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.ClientSize = new System.Drawing.Size(611, 334);
             this.Controls.Add(this.lblprodu);
             this.Controls.Add(this.lblanio);
             this.Controls.Add(this.cmbTipoProdu);
