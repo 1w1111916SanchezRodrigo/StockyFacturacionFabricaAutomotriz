@@ -28,27 +28,24 @@ namespace DistribuidoraCrelech.ConsultasForms
         private void actualizarInfo() {
             string consultaSQL = "pa_facturas_importe_mayor";
             int a = 0;
-            if (txtImporte.Text == "")
-            {
-                MessageBox.Show("Debe ingresar un número");
-            }
-            else {
-                
-                try
-                {
-                    a = int.Parse(txtImporte.Text);
-                }
-                catch (OverflowException)
-                {
-                    MessageBox.Show("El numero es demasiado grande, Elija otro");
-                    txtImporte.Clear();
-                }
-            }
+
+
+
+            //try
+            //{
+            //    a = int.Parse(txtImporte.Text);
+            //}
+            //catch (OverflowException)
+            //{
+            //    MessageBox.Show("El numero es demasiado grande, Elija otro");
+            //    txtImporte.Clear();
+            //}
+
 
 
             SqlCommand comandoTipo = new SqlCommand(consultaSQL);
             comandoTipo.CommandType = CommandType.StoredProcedure;
-            comandoTipo.Parameters.AddWithValue("@importe", a);
+            comandoTipo.Parameters.AddWithValue("@importe", int.Parse(txtImporte.Text));
             comandoTipo.Parameters.AddWithValue("@tipo", cboTipoProd.SelectedValue);
 
             dgvFacturas.DataSource = cxDato.MostrarDatoCnParametro(comandoTipo);
@@ -56,8 +53,22 @@ namespace DistribuidoraCrelech.ConsultasForms
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            actualizarInfo();
-            txtImporte.Clear();
+            if (string.IsNullOrEmpty(txtImporte.Text))
+            {
+                MessageBox.Show("Debe ingresar un número");
+            }
+            else
+            {
+                
+                
+                    actualizarInfo();
+                    txtImporte.Clear();
+                
+                
+            }
+            
+            
+            
         }
 
         private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
