@@ -1455,39 +1455,7 @@ INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_fac
 
 
 ----------------------------------------------PROCEDIMIENTOS ALMACENADOS ----------------------------------------------------
-
---1- Mostrar las autopartes cuyo precio sea mayor al promedio de precio de autopartes 
-
-create proc PA_Producto_Mayor_Promedio  
-@tipo int = 0  
-as  
-select   id_producto 'Id', descripcion 'Descripcion', precio_venta  
-from     productos  
-where    id_tipo_producto = @tipo   
-    and  precio_venta    > ( select avg(precio_venta)  
-              from productos  
-                                        where id_tipo_producto = @tipo)
-exec PA_Producto_Mayor_promedio @tipo = 1 --@tipo = 2
-
-
--- 6 - Cantidad de vehículos entregados por meses entre las fechas '01/01/2020' y '07/31/2020’ 
-
-Create procedure sp_vehiculos_entregados
-@fecha1 dateTime = '01/01/1900',
-@fecha2 dateTime = '31/12/2999'
-as
-Select month(op.fecha_entrega) MES, Count (distinct op.id_pedido) 'Cantidad de vehículos entregados'
-from ORDEN_PEDIDO op join DETALLE_PEDIDO dp on op.id_pedido = dp.id_pedido 
-join PRODUCTOS pr on pr.id_producto = dp.id_producto
-where op.estado = 1 
-and op.fecha_entrega between @fecha1 and @fecha2
-group by month(op.fecha_entrega)
-
-
-execute sp_vehiculos_entregados '01/01/2020', '12/31/2020'
-
-
---Productos que no se vendieron consutla n4
+-- 1) Productos que no se vendieron
 alter proc sp_productos_sn_ventas
 	@id_tipo_producto int = 0 
 as
@@ -1502,8 +1470,33 @@ drop proc sp_productos_sn_ventas
 exec sp_productos_sn_ventas @id_tipo_producto = 2
 
 use fabrica_automotriz
+--2- Mostrar las autopartes cuyo precio sea mayor al promedio de precio de autopartes 
 
---7 - Porcentaje de compras por tipo de cliente
+create proc PA_Producto_Mayor_Promedio  
+@tipo int = 0  
+as  
+select   id_producto 'Id', descripcion 'Descripcion', precio_venta  
+from     productos  
+where    id_tipo_producto = @tipo   
+    and  precio_venta    > ( select avg(precio_venta)  
+              from productos  
+                                        where id_tipo_producto = @tipo)
+exec PA_Producto_Mayor_promedio @tipo = 1 --@tipo = 2
+
+--3 primera factura emitida y el importe de la factura de cada cliente  cuyo apellido no empieza con...
+CREATE proc SP_Primera_Factura  
+@letra1 varchar (10),  
+@letra2 varchar (10)  
+  
+as  
+  
+select  f.id_cliente 'Codigo Cliente', c.apellido'Apellido ',c.nombre 'Nombre', min(f.fecha) 'Fecha primer Factura', sum(df.cantidad*df.precio) Importe  
+from detalles_facturas df join FACTURAS f on df.id_factura = f.id_factura  join CLIENTES c on f.id_cliente = c.id_cliente  
+where  c.apellido not like '['+@letra1+','+@letra2+']%' --and c.apellido not like 'J'@letra2+'%'  
+group by  f.id_cliente, c.apellido, c.nombre
+
+
+--4 - Porcentaje de compras por tipo de cliente
 alter view vw_porcentaje_x_tipo_cliente
 as
 select CONVERT(decimal(10,1),count(f.id_factura)*100.00/(select count(*)
@@ -1539,7 +1532,6 @@ where tc.id_tipo_cliente = 4
 
 select *
 from vw_porcentaje_x_tipo_cliente
-
 
 --5 - Totales de facturación y promedio de facturación anual de producto
 use FABRICA_AUTOMOTRIZ
@@ -1602,6 +1594,46 @@ group by year(f.fecha)
 order by 1,2
 
 exec sp_tot_factu_y_prom 1,2020
+-- 6 - Cantidad de vehículos entregados por meses entre las fechas '01/01/2020' y '07/31/2020’ 
+
+alter procedure sp_vehiculos_entregados    
+@fecha1 dateTime = '01/01/1900',    
+@fecha2 dateTime = '31/12/2999'    
+as    
+Select year(op.fecha_entrega)Año,month(op.fecha_entrega) Mes, Count (distinct op.id_pedido) 'Cantidad de vehículos entregados'    
+from ORDEN_PEDIDO op join DETALLE_PEDIDO dp on op.id_pedido = dp.id_pedido     
+join PRODUCTOS pr on pr.id_producto = dp.id_producto    
+where op.estado = 1     
+and op.fecha_entrega between @fecha1 and @fecha2    
+group by year(op.fecha_entrega),month(op.fecha_entrega)
+
+
+execute sp_vehiculos_entregados '01/01/2020', '12/31/2020'
+
+
+--7 Factura cuyo importe es mayor al ingresado por tipo de producto
+
+
+create proc pa_facturas_importe_mayor  
+@importe int = 0,  
+@tipo int = 0  
+as  
+select f.id_factura 'Código Factura', sum(df.cantidad*df.precio) Importe  
+from facturas f join detalles_facturas df on f.id_factura=df.id_factura join productos p on df.id_producto=p.id_producto  
+where p.id_tipo_producto = @tipo  
+group by f.id_factura  
+having @importe<sum(df.cantidad*df.precio)
+
+--8 autoparte con stock por debajo del minimo
+create view Vs_autoparte_stock  
+as  
+Select p.id_producto 'Código de Producto', p.descripcion Producto, p.Stock, p.Stock_Minimo, (p.stock_minimo - p.stock) 'Stock faltante'  
+from productos p  
+where id_tipo_producto = 1  
+and stock < ( select pr.stock_minimo  
+     from productos pr  
+     where p.id_producto = pr.id_producto)
+
 
 
 --ALGUNAS CONSULTAS

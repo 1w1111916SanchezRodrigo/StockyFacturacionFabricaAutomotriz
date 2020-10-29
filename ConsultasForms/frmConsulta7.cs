@@ -80,7 +80,10 @@ namespace DistribuidoraCrelech.ConsultasForms
             }
         }
 
-        
+        private void dgvFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
     }
 
