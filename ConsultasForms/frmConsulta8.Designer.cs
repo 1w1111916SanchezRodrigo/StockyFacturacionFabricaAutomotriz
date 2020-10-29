@@ -51,6 +51,7 @@
             this.dgvStock.EnableHeadersVisualStyles = false;
             this.dgvStock.Location = new System.Drawing.Point(50, 23);
             this.dgvStock.Name = "dgvStock";
+            this.dgvStock.ReadOnly = true;
             this.dgvStock.RowHeadersVisible = false;
             this.dgvStock.Size = new System.Drawing.Size(498, 279);
             this.dgvStock.TabIndex = 0;

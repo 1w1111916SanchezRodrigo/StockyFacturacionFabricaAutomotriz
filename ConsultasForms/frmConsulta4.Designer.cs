@@ -40,38 +40,41 @@
             this.chartDonut.BackColor = System.Drawing.Color.WhiteSmoke;
             this.chartDonut.BackSecondaryColor = System.Drawing.Color.Transparent;
             this.chartDonut.BorderlineColor = System.Drawing.Color.Transparent;
+            this.chartDonut.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             chartArea1.BackColor = System.Drawing.Color.Transparent;
             chartArea1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea1.BorderColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
             chartArea1.ShadowColor = System.Drawing.Color.White;
             this.chartDonut.ChartAreas.Add(chartArea1);
             this.chartDonut.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.BackColor = System.Drawing.Color.Transparent;
             legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend1.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend1.HeaderSeparatorColor = System.Drawing.Color.Transparent;
             legend1.IsTextAutoFit = false;
             legend1.ItemColumnSeparatorColor = System.Drawing.Color.White;
             legend1.Name = "Legend1";
-            legend1.TitleForeColor = System.Drawing.Color.White;
-            legend1.TitleSeparatorColor = System.Drawing.Color.White;
+            legend1.TitleForeColor = System.Drawing.Color.Transparent;
+            legend1.TitleSeparatorColor = System.Drawing.Color.Transparent;
             this.chartDonut.Legends.Add(legend1);
             this.chartDonut.Location = new System.Drawing.Point(0, 0);
             this.chartDonut.Name = "chartDonut";
-            this.chartDonut.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chartDonut.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             this.chartDonut.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.Black,
         System.Drawing.Color.White,
         System.Drawing.Color.Silver};
             series1.BorderColor = System.Drawing.Color.Transparent;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.CustomProperties = "PieLineColor=Black";
             series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.LabelBackColor = System.Drawing.Color.Transparent;
             series1.LabelBorderColor = System.Drawing.Color.Transparent;
             series1.Legend = "Legend1";
-            series1.MarkerColor = System.Drawing.Color.White;
+            series1.MarkerBorderColor = System.Drawing.Color.Black;
+            series1.MarkerColor = System.Drawing.Color.Black;
             series1.Name = "s1";
+            series1.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.Black;
             series1.YValuesPerPoint = 2;
             this.chartDonut.Series.Add(series1);
             this.chartDonut.Size = new System.Drawing.Size(564, 287);

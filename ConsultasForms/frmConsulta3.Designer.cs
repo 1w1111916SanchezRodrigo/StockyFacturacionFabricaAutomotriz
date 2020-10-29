@@ -56,6 +56,7 @@
             this.dgvCons3.EnableHeadersVisualStyles = false;
             this.dgvCons3.Location = new System.Drawing.Point(65, 70);
             this.dgvCons3.Name = "dgvCons3";
+            this.dgvCons3.ReadOnly = true;
             this.dgvCons3.RowHeadersVisible = false;
             this.dgvCons3.Size = new System.Drawing.Size(433, 228);
             this.dgvCons3.TabIndex = 2;

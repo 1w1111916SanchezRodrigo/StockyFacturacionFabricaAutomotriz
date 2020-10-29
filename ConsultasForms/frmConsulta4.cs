@@ -29,7 +29,9 @@ namespace DistribuidoraCrelech.ConsultasForms
             chartDonut.Series["s1"]["PieLabelStyle"] = "Disabled";
             //To show the Chart Series label outside of Slice
             chartDonut.Series["s1"]["PieLabelStyle"] = "outside";
-           // chartDonut.Series[0]["PieStartAngle"] = "90";
+           chartDonut.Series[0]["PieStartAngle"] = "90";
+           // chartDonut.Series[0].BorderWidth = 1;
+            //chartDonut.Series[0].BorderColor= Color.Black;
             //If you need a line to point to each values from slice you can use the below code
 
             chartDonut.ChartAreas["ChartArea1"].Area3DStyle.Enable3D = true;

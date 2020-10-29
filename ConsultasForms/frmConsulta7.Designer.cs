@@ -57,6 +57,7 @@
             this.dgvFacturas.EnableHeadersVisualStyles = false;
             this.dgvFacturas.Location = new System.Drawing.Point(72, 90);
             this.dgvFacturas.Name = "dgvFacturas";
+            this.dgvFacturas.ReadOnly = true;
             this.dgvFacturas.RowHeadersVisible = false;
             this.dgvFacturas.Size = new System.Drawing.Size(422, 171);
             this.dgvFacturas.TabIndex = 0;
