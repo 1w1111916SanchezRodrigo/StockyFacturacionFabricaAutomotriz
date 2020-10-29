@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
             this.txtImporte = new System.Windows.Forms.TextBox();
             this.cboTipoProd = new System.Windows.Forms.ComboBox();
@@ -40,10 +41,23 @@
             // dgvFacturas
             // 
             this.dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvFacturas.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFacturas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.dgvFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvFacturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFacturas.ColumnHeadersHeight = 40;
+            this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvFacturas.EnableHeadersVisualStyles = false;
             this.dgvFacturas.Location = new System.Drawing.Point(97, 90);
             this.dgvFacturas.Name = "dgvFacturas";
+            this.dgvFacturas.RowHeadersVisible = false;
             this.dgvFacturas.Size = new System.Drawing.Size(266, 171);
             this.dgvFacturas.TabIndex = 0;
             // 
@@ -68,6 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(94, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
@@ -77,6 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(239, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 13);
@@ -85,6 +101,7 @@
             // 
             // btnActualizar
             // 
+            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnActualizar.Location = new System.Drawing.Point(385, 270);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
@@ -97,6 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(481, 310);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label2);
@@ -104,6 +122,7 @@
             this.Controls.Add(this.cboTipoProd);
             this.Controls.Add(this.txtImporte);
             this.Controls.Add(this.dgvFacturas);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frmConsulta7";
             this.Text = "frmConsulta7";
             this.Load += new System.EventHandler(this.frmConsulta7_Load);
