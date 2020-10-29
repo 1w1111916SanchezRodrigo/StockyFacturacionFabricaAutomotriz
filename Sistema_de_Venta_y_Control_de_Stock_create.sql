@@ -1458,7 +1458,7 @@ INSERT INTO CUOTAS_AUOTPLAN(fecha,fecha_vencimiento,nro_cuota,id_autoplan,id_fac
 
 --1- Mostrar las autopartes cuyo precio sea mayor al promedio de precio de autopartes 
 
-CREATE proc PA_Producto_Mayor_Promedio  
+create proc PA_Producto_Mayor_Promedio  
 @tipo int = 0  
 as  
 select   id_producto 'Id', descripcion 'Descripcion', precio_venta  
@@ -1488,10 +1488,10 @@ execute sp_vehiculos_entregados '01/01/2020', '12/31/2020'
 
 
 --Productos que no se vendieron consutla n4
-create proc sp_productos_sn_ventas
+alter proc sp_productos_sn_ventas
 	@id_tipo_producto int = 0 
 as
-select	p.descripcion
+select	p.descripcion 'Descripcion'
 from	PRODUCTOS p
 where	not exists (select	d.id_producto
 					from	DETALLES_FACTURAS d

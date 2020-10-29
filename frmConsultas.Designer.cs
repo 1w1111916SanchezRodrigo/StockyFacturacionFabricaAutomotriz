@@ -262,6 +262,7 @@
             // 
             // labelTitle
             // 
+            this.labelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -283,6 +284,7 @@
             // 
             // picLogo
             // 
+            this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.picLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picLogo.Image = global::DistribuidoraCrelech.Properties.Resources.opcion1;
             this.picLogo.InitialImage = global::DistribuidoraCrelech.Properties.Resources.opcion1;
