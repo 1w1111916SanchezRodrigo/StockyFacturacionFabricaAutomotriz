@@ -39,21 +39,23 @@
             // cmbTipoProdu
             // 
             this.cmbTipoProdu.BackColor = System.Drawing.Color.White;
+            this.cmbTipoProdu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoProdu.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbTipoProdu.FormattingEnabled = true;
-            this.cmbTipoProdu.Location = new System.Drawing.Point(116, 12);
+            this.cmbTipoProdu.Location = new System.Drawing.Point(148, 12);
             this.cmbTipoProdu.Name = "cmbTipoProdu";
-            this.cmbTipoProdu.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoProdu.Size = new System.Drawing.Size(121, 23);
             this.cmbTipoProdu.TabIndex = 0;
             this.cmbTipoProdu.SelectedIndexChanged += new System.EventHandler(this.cmbTipoProdu_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(9, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.Size = new System.Drawing.Size(133, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tipos de productos:";
             // 

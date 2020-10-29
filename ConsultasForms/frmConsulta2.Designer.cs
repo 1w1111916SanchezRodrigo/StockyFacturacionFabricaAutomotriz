@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboTipoProductoConsult2 = new System.Windows.Forms.ComboBox();
             this.dgvCon2 = new System.Windows.Forms.DataGridView();
             this.lstPromedio = new System.Windows.Forms.ListBox();
@@ -39,10 +39,11 @@
             // cboTipoProductoConsult2
             // 
             this.cboTipoProductoConsult2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoProductoConsult2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoProductoConsult2.FormattingEnabled = true;
             this.cboTipoProductoConsult2.Location = new System.Drawing.Point(12, 12);
             this.cboTipoProductoConsult2.Name = "cboTipoProductoConsult2";
-            this.cboTipoProductoConsult2.Size = new System.Drawing.Size(121, 21);
+            this.cboTipoProductoConsult2.Size = new System.Drawing.Size(121, 23);
             this.cboTipoProductoConsult2.TabIndex = 0;
             this.cboTipoProductoConsult2.SelectedIndexChanged += new System.EventHandler(this.cboTipoProducto_SelectedIndexChanged);
             // 
@@ -52,14 +53,14 @@
             this.dgvCon2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.dgvCon2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCon2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCon2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCon2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCon2.ColumnHeadersHeight = 30;
             this.dgvCon2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCon2.EnableHeadersVisualStyles = false;
@@ -71,19 +72,22 @@
             // 
             // lstPromedio
             // 
+            this.lstPromedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPromedio.FormattingEnabled = true;
+            this.lstPromedio.ItemHeight = 15;
             this.lstPromedio.Location = new System.Drawing.Point(382, 55);
             this.lstPromedio.Name = "lstPromedio";
-            this.lstPromedio.Size = new System.Drawing.Size(87, 17);
+            this.lstPromedio.Size = new System.Drawing.Size(90, 19);
             this.lstPromedio.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(379, 39);
+            this.label1.Location = new System.Drawing.Point(379, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "Promedio";
             // 
