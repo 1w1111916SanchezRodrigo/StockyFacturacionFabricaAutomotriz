@@ -37,19 +37,19 @@
             this.btnConsulta4 = new System.Windows.Forms.Button();
             this.btnConsulta3 = new System.Windows.Forms.Button();
             this.btnConsulta2 = new System.Windows.Forms.Button();
+            this.btnConsulta1 = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.FlowLayoutPanel();
+            this.picMiniLogo = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.btnConsulta1 = new System.Windows.Forms.Button();
-            this.picMiniLogo = new System.Windows.Forms.PictureBox();
             this.panelConsulta.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMiniLogo)).BeginInit();
             this.panelTitle.SuspendLayout();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMiniLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelConsulta
@@ -210,6 +210,26 @@
             this.btnConsulta2.UseVisualStyleBackColor = true;
             this.btnConsulta2.Click += new System.EventHandler(this.btnConsulta2_Click);
             // 
+            // btnConsulta1
+            // 
+            this.btnConsulta1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsulta1.FlatAppearance.BorderSize = 0;
+            this.btnConsulta1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsulta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnConsulta1.Image = global::DistribuidoraCrelech.Properties.Resources.question;
+            this.btnConsulta1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsulta1.Location = new System.Drawing.Point(0, 75);
+            this.btnConsulta1.Name = "btnConsulta1";
+            this.btnConsulta1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnConsulta1.Size = new System.Drawing.Size(220, 40);
+            this.btnConsulta1.TabIndex = 1;
+            this.btnConsulta1.Text = "  Consulta 1";
+            this.btnConsulta1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsulta1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConsulta1.UseVisualStyleBackColor = true;
+            this.btnConsulta1.Click += new System.EventHandler(this.btnConsulta1_Click);
+            // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
@@ -219,6 +239,16 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(220, 75);
             this.panelLogo.TabIndex = 0;
+            // 
+            // picMiniLogo
+            // 
+            this.picMiniLogo.Image = global::DistribuidoraCrelech.Properties.Resources.opcion1;
+            this.picMiniLogo.Location = new System.Drawing.Point(3, 3);
+            this.picMiniLogo.Name = "picMiniLogo";
+            this.picMiniLogo.Size = new System.Drawing.Size(220, 72);
+            this.picMiniLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMiniLogo.TabIndex = 0;
+            this.picMiniLogo.TabStop = false;
             // 
             // panelTitle
             // 
@@ -263,36 +293,6 @@
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             // 
-            // btnConsulta1
-            // 
-            this.btnConsulta1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConsulta1.FlatAppearance.BorderSize = 0;
-            this.btnConsulta1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsulta1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConsulta1.Image = global::DistribuidoraCrelech.Properties.Resources.question;
-            this.btnConsulta1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsulta1.Location = new System.Drawing.Point(0, 75);
-            this.btnConsulta1.Name = "btnConsulta1";
-            this.btnConsulta1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnConsulta1.Size = new System.Drawing.Size(220, 40);
-            this.btnConsulta1.TabIndex = 1;
-            this.btnConsulta1.Text = "  Consulta 1";
-            this.btnConsulta1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsulta1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConsulta1.UseVisualStyleBackColor = true;
-            this.btnConsulta1.Click += new System.EventHandler(this.btnConsulta1_Click);
-            // 
-            // picMiniLogo
-            // 
-            this.picMiniLogo.Image = global::DistribuidoraCrelech.Properties.Resources.opcion1;
-            this.picMiniLogo.Location = new System.Drawing.Point(3, 3);
-            this.picMiniLogo.Name = "picMiniLogo";
-            this.picMiniLogo.Size = new System.Drawing.Size(220, 72);
-            this.picMiniLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMiniLogo.TabIndex = 0;
-            this.picMiniLogo.TabStop = false;
-            // 
             // frmConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,15 +301,16 @@
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelConsulta);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConsultas";
-            this.Text = "Consultas2";
+            this.Text = "Consultas";
             this.Load += new System.EventHandler(this.frmConsultas_Load);
             this.panelConsulta.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picMiniLogo)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMiniLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
