@@ -27,10 +27,7 @@ namespace DistribuidoraCrelech.ConsultasForms
 
         private void actualizarInfo() {
             string consultaSQL = "pa_facturas_importe_mayor";
-            int a = 0;
-
-
-
+           
             //try
             //{
             //    a = int.Parse(txtImporte.Text);
@@ -40,8 +37,6 @@ namespace DistribuidoraCrelech.ConsultasForms
             //    MessageBox.Show("El numero es demasiado grande, Elija otro");
             //    txtImporte.Clear();
             //}
-
-
 
             SqlCommand comandoTipo = new SqlCommand(consultaSQL);
             comandoTipo.CommandType = CommandType.StoredProcedure;
@@ -60,15 +55,11 @@ namespace DistribuidoraCrelech.ConsultasForms
             else
             {
                 
-                
                     actualizarInfo();
                     txtImporte.Clear();
                 
-                
             }
-            
-            
-            
+          
         }
 
         private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
