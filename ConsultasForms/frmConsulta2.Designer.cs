@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboTipoProductoConsult2 = new System.Windows.Forms.ComboBox();
             this.dgvCon2 = new System.Windows.Forms.DataGridView();
             this.lstPromedio = new System.Windows.Forms.ListBox();
@@ -39,7 +40,7 @@
             // 
             this.cboTipoProductoConsult2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoProductoConsult2.FormattingEnabled = true;
-            this.cboTipoProductoConsult2.Location = new System.Drawing.Point(12, 24);
+            this.cboTipoProductoConsult2.Location = new System.Drawing.Point(12, 12);
             this.cboTipoProductoConsult2.Name = "cboTipoProductoConsult2";
             this.cboTipoProductoConsult2.Size = new System.Drawing.Size(121, 21);
             this.cboTipoProductoConsult2.TabIndex = 0;
@@ -48,16 +49,30 @@
             // dgvCon2
             // 
             this.dgvCon2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCon2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCon2.Location = new System.Drawing.Point(12, 51);
+            this.dgvCon2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.dgvCon2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCon2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCon2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCon2.ColumnHeadersHeight = 30;
+            this.dgvCon2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCon2.EnableHeadersVisualStyles = false;
+            this.dgvCon2.Location = new System.Drawing.Point(12, 39);
             this.dgvCon2.Name = "dgvCon2";
-            this.dgvCon2.Size = new System.Drawing.Size(361, 266);
+            this.dgvCon2.RowHeadersVisible = false;
+            this.dgvCon2.Size = new System.Drawing.Size(361, 286);
             this.dgvCon2.TabIndex = 1;
             // 
             // lstPromedio
             // 
             this.lstPromedio.FormattingEnabled = true;
-            this.lstPromedio.Location = new System.Drawing.Point(139, 28);
+            this.lstPromedio.Location = new System.Drawing.Point(382, 55);
             this.lstPromedio.Name = "lstPromedio";
             this.lstPromedio.Size = new System.Drawing.Size(87, 17);
             this.lstPromedio.TabIndex = 5;
@@ -65,7 +80,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(139, 12);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(379, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 6;
@@ -75,6 +91,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstPromedio);
