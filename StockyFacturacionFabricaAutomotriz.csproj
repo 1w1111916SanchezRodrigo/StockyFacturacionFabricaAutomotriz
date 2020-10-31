@@ -127,6 +127,7 @@
       <DependentUpon>frmConsulta1.cs</DependentUpon>
     </Compile>
     <Compile Include="Marcas.cs" />
+    <Compile Include="Producto.cs" />
     <Compile Include="Rubros.cs" />
     <Compile Include="SistemaFabricaAutomotriz.cs">
       <SubType>Form</SubType>
