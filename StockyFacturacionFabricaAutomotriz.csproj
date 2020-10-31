@@ -108,6 +108,12 @@
       <DependentUpon>frmConsulta8.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="AbmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>AbmProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultasForms\frmConsulta8.resx">
       <DependentUpon>frmConsulta8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>AbmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultas.resx">
       <DependentUpon>frmConsultas.cs</DependentUpon>
