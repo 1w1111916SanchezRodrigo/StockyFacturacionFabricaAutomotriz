@@ -17,7 +17,8 @@ namespace DistribuidoraCrelech
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new DistribuidoraCrelech());
-            Application.Run(new frmConsultas());
+            //Application.Run(new frmConsultas());
+            Application.Run(new NuevaFactura());
         }
     }
 }
