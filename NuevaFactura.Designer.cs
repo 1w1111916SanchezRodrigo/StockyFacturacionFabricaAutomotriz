@@ -43,6 +43,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cod_prod = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sub_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -52,12 +58,6 @@
             this.btnConsulta1 = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.FlowLayoutPanel();
             this.picMiniLogo = new System.Windows.Forms.PictureBox();
-            this.cod_prod = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sub_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelTitle.SuspendLayout();
@@ -88,6 +88,7 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(644, 375);
             this.panelDesktop.TabIndex = 8;
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // radioButton1
             // 
@@ -153,6 +154,7 @@
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 17;
             this.label6.Text = "label6";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -223,6 +225,45 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(617, 138);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // cod_prod
+            // 
+            this.cod_prod.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.cod_prod.DisplayStyleForCurrentCellOnly = true;
+            this.cod_prod.HeaderText = "Código";
+            this.cod_prod.Name = "cod_prod";
+            this.cod_prod.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cod_prod.Width = 50;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.descripcion.DisplayStyleForCurrentCellOnly = true;
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
+            // desc
+            // 
+            this.desc.HeaderText = "Desc %";
+            this.desc.Name = "desc";
+            // 
+            // precio_unitario
+            // 
+            this.precio_unitario.HeaderText = "Precio";
+            this.precio_unitario.Name = "precio_unitario";
+            // 
+            // sub_total
+            // 
+            this.sub_total.HeaderText = "Sub Total";
+            this.sub_total.Name = "sub_total";
             // 
             // cmbCliente
             // 
@@ -305,6 +346,7 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnConsulta1
             // 
@@ -344,44 +386,6 @@
             this.picMiniLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMiniLogo.TabIndex = 0;
             this.picMiniLogo.TabStop = false;
-            // 
-            // cod_prod
-            // 
-            this.cod_prod.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.cod_prod.DisplayStyleForCurrentCellOnly = true;
-            this.cod_prod.HeaderText = "Código";
-            this.cod_prod.Name = "cod_prod";
-            this.cod_prod.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cod_prod.Width = 50;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.descripcion.DisplayStyleForCurrentCellOnly = true;
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            // 
-            // desc
-            // 
-            this.desc.HeaderText = "Desc %";
-            this.desc.Name = "desc";
-            // 
-            // precio_unitario
-            // 
-            this.precio_unitario.HeaderText = "Precio";
-            this.precio_unitario.Name = "precio_unitario";
-            // 
-            // sub_total
-            // 
-            this.sub_total.HeaderText = "Sub Total";
-            this.sub_total.Name = "sub_total";
             // 
             // NuevaFactura
             // 
