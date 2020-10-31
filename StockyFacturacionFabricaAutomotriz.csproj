@@ -136,6 +136,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeColor.cs" />
+    <Compile Include="Validar.cs" />
     <EmbeddedResource Include="ConsultasForms\frmConsulta2.resx">
       <DependentUpon>frmConsulta2.cs</DependentUpon>
     </EmbeddedResource>
