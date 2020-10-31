@@ -27,7 +27,28 @@ namespace DistribuidoraCrelech
             cxDatos.CargarCombo(comboColumnDesc, "productos", "id_producto", "descripcion");
 
             cxDatos.CargarComboCl(cmbCliente, "clientes", "id_cliente");
+
+            label6.Text = DateTime.Now.ToString();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
