@@ -88,6 +88,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(390, 59);
+            this.txtDescripcion.MaxLength = 99;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(150, 20);
             this.txtDescripcion.TabIndex = 1;
@@ -107,7 +108,7 @@
             this.cboTipoProd.Location = new System.Drawing.Point(389, 293);
             this.cboTipoProd.Name = "cboTipoProd";
             this.cboTipoProd.Size = new System.Drawing.Size(150, 21);
-            this.cboTipoProd.TabIndex = 6;
+            this.cboTipoProd.TabIndex = 7;
             // 
             // cboRubro
             // 
@@ -115,7 +116,7 @@
             this.cboRubro.Location = new System.Drawing.Point(389, 333);
             this.cboRubro.Name = "cboRubro";
             this.cboRubro.Size = new System.Drawing.Size(150, 21);
-            this.cboRubro.TabIndex = 7;
+            this.cboRubro.TabIndex = 8;
             // 
             // lblRubro
             // 
@@ -132,7 +133,7 @@
             this.cboColor.Location = new System.Drawing.Point(389, 373);
             this.cboColor.Name = "cboColor";
             this.cboColor.Size = new System.Drawing.Size(150, 21);
-            this.cboColor.TabIndex = 8;
+            this.cboColor.TabIndex = 9;
             // 
             // lblColor
             // 
@@ -155,9 +156,11 @@
             // txtStock
             // 
             this.txtStock.Location = new System.Drawing.Point(390, 254);
+            this.txtStock.MaxLength = 9;
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(150, 20);
-            this.txtStock.TabIndex = 5;
+            this.txtStock.TabIndex = 6;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // label2
             // 
@@ -171,9 +174,11 @@
             // txtStockMin
             // 
             this.txtStockMin.Location = new System.Drawing.Point(390, 215);
+            this.txtStockMin.MaxLength = 9;
             this.txtStockMin.Name = "txtStockMin";
             this.txtStockMin.Size = new System.Drawing.Size(150, 20);
-            this.txtStockMin.TabIndex = 4;
+            this.txtStockMin.TabIndex = 5;
+            this.txtStockMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockMin_KeyPress);
             // 
             // label3
             // 
@@ -187,9 +192,11 @@
             // txtPrecioVenta
             // 
             this.txtPrecioVenta.Location = new System.Drawing.Point(390, 137);
+            this.txtPrecioVenta.MaxLength = 15;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(150, 20);
-            this.txtPrecioVenta.TabIndex = 2;
+            this.txtPrecioVenta.TabIndex = 3;
+            this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
             // 
             // label4
             // 
@@ -203,9 +210,11 @@
             // txtPrecioMayo
             // 
             this.txtPrecioMayo.Location = new System.Drawing.Point(390, 176);
+            this.txtPrecioMayo.MaxLength = 15;
             this.txtPrecioMayo.Name = "txtPrecioMayo";
             this.txtPrecioMayo.Size = new System.Drawing.Size(150, 20);
-            this.txtPrecioMayo.TabIndex = 3;
+            this.txtPrecioMayo.TabIndex = 4;
+            this.txtPrecioMayo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMayo_KeyPress);
             // 
             // lstProducto
             // 
@@ -221,7 +230,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(12, 41);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(163, 35);
-            this.btnNuevo.TabIndex = 9;
+            this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -231,7 +240,7 @@
             this.btnEditar.Location = new System.Drawing.Point(12, 90);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(163, 35);
-            this.btnEditar.TabIndex = 10;
+            this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -241,7 +250,7 @@
             this.btnBorrar.Location = new System.Drawing.Point(12, 139);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(163, 35);
-            this.btnBorrar.TabIndex = 11;
+            this.btnBorrar.TabIndex = 13;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
@@ -251,7 +260,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(12, 188);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(163, 35);
-            this.btnGrabar.TabIndex = 12;
+            this.btnGrabar.TabIndex = 14;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -261,7 +270,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(12, 237);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(163, 35);
-            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -271,7 +280,7 @@
             this.btnSalir.Location = new System.Drawing.Point(12, 286);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(163, 35);
-            this.btnSalir.TabIndex = 14;
+            this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -288,9 +297,10 @@
             // txtObersavacion
             // 
             this.txtObersavacion.Location = new System.Drawing.Point(390, 98);
+            this.txtObersavacion.MaxLength = 49;
             this.txtObersavacion.Name = "txtObersavacion";
             this.txtObersavacion.Size = new System.Drawing.Size(150, 20);
-            this.txtObersavacion.TabIndex = 18;
+            this.txtObersavacion.TabIndex = 2;
             // 
             // cboMaterial
             // 
@@ -298,7 +308,7 @@
             this.cboMaterial.Location = new System.Drawing.Point(389, 415);
             this.cboMaterial.Name = "cboMaterial";
             this.cboMaterial.Size = new System.Drawing.Size(150, 21);
-            this.cboMaterial.TabIndex = 20;
+            this.cboMaterial.TabIndex = 10;
             // 
             // label6
             // 
