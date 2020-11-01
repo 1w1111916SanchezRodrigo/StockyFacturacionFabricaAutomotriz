@@ -214,63 +214,69 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 47);
+            this.button1.Location = new System.Drawing.Point(12, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 35);
             this.button1.TabIndex = 20;
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 88);
+            this.button2.Location = new System.Drawing.Point(12, 90);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 35);
             this.button2.TabIndex = 21;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 129);
+            this.button3.Location = new System.Drawing.Point(12, 139);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(163, 35);
             this.button3.TabIndex = 22;
             this.button3.Text = "Borrar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 170);
+            this.button4.Location = new System.Drawing.Point(12, 188);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(163, 35);
             this.button4.TabIndex = 23;
             this.button4.Text = "Grabar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(12, 211);
+            this.btnCancelar.Location = new System.Drawing.Point(12, 237);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(163, 35);
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(12, 252);
+            this.btnSalir.Location = new System.Drawing.Point(12, 286);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(163, 35);
             this.btnSalir.TabIndex = 25;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // AbmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 384);
+            this.ClientSize = new System.Drawing.Size(578, 382);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.button4);

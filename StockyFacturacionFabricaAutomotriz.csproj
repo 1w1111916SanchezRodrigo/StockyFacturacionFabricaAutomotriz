@@ -148,6 +148,9 @@
     <Compile Include="ThemeColor.cs" />
     <Compile Include="TiposProductos.cs" />
     <Compile Include="Validar.cs" />
+    <EmbeddedResource Include="AbmProducto.resx">
+      <DependentUpon>AbmProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultasForms\frmConsulta2.resx">
       <DependentUpon>frmConsulta2.cs</DependentUpon>
     </EmbeddedResource>
