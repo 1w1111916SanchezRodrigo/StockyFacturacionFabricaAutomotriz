@@ -141,10 +141,16 @@ namespace DistribuidoraCrelech
             tabla.Rows.InsertAt(row, 0);
             combo.SelectedIndex = 0;
         }
+        public void leerTabla(string nombreTabla)
+        {
+            Conectar();
+            comando.CommandText = "select * from " + nombreTabla;
+            lector = comando.ExecuteReader();
+
+        }
 
 
-
-        public DataTable LeerTabla(string nombreTabla)
+            public DataTable LeerTabla(string nombreTabla)
         {
 
             DataTable tabla = new DataTable();
@@ -155,6 +161,13 @@ namespace DistribuidoraCrelech
             tabla.Load(comando.ExecuteReader());
             Desconectar();
             return tabla;
+        }
+        public void actualizar(string consultaSQL)
+        {
+            Conectar();
+            comando.CommandText = consultaSQL;
+            comando.ExecuteNonQuery();
+            Desconectar();
         }
     }
 }

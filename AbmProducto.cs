@@ -29,17 +29,16 @@ namespace DistribuidoraCrelech
             c = 0;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void AbmProducto_Load(object sender, EventArgs e)
         {
             oDato.CargarCombo(cboRubro, "Rubros", "id_rubro", "descripcion");
             oDato.CargarCombo(cboColor, "Colores", "id_color", "descripcion");
             oDato.CargarCombo(cboTipoProd,"Tipos_Productos", "id_tipo_producto","descripcion");
-            
+            oDato.CargarCombo(cboMaterial,"Materiales","id_material","descripcion");
+            cargarLista("productos");
+            habilitar(true);
         }
 
         private void lblIdProd_Click(object sender, EventArgs e)
@@ -48,7 +47,7 @@ namespace DistribuidoraCrelech
         }
         private void cargarLista(string nombreTabla)
         {
-            oDato.LeerTabla(nombreTabla);
+            oDato.leerTabla(nombreTabla);
             c = 0;
             while (oDato.pLector.Read())
             {
@@ -72,9 +71,9 @@ namespace DistribuidoraCrelech
                 if (!oDato.pLector.IsDBNull(8))
                     p.pStockMinimo = oDato.pLector.GetInt32(8);
                 if (!oDato.pLector.IsDBNull(9))
-                    p.pPrecioVenta = oDato.pLector.GetFloat(9);
+                    p.pPrecioVenta = Convert.ToDouble(oDato.pLector.GetDecimal(9));
                 if (!oDato.pLector.IsDBNull(10))
-                    p.pPrecioMayo = oDato.pLector.GetFloat(10);
+                    p.pPrecioMayo = Convert.ToDouble(oDato.pLector.GetDecimal(10));
                 aProducto[c] = p;
                 c++;
 
@@ -99,7 +98,7 @@ namespace DistribuidoraCrelech
                 MessageBox.Show("Debe Ingresar id Producto");
                 return false;
             }
-            if(string.IsNullOrEmpty(txtPrecioVenta.Text))
+            if (string.IsNullOrEmpty(txtPrecioVenta.Text))
             {
                 MessageBox.Show("Debe ingresar un precio de venta");
                 return false;
@@ -136,35 +135,126 @@ namespace DistribuidoraCrelech
             }
             return true;
         }
+        private void habilitar(bool x)
+        {
+            txtDescripcion.Enabled = !x;
+            txtIdProd.Enabled = !x;
+            txtObersavacion.Enabled = !x;
+            txtPrecioMayo.Enabled = !x;
+            txtPrecioVenta.Enabled = !x;
+            txtStock.Enabled = !x;
+            txtStockMin.Enabled = !x;
+            cboColor.Enabled = !x;
+            cboRubro.Enabled = !x;
+            cboTipoProd.Enabled = !x;
+            cboMaterial.Enabled = !x;
+            btnNuevo.Enabled = x;
+            btnEditar.Enabled = x;
+            btnBorrar.Enabled = !x;
+            btnGrabar.Enabled = !x;
+            lstProducto.Enabled = x;
+        }
+
+        private void cargarCampo(int p)
+        {
+            txtDescripcion.Text = aProducto[p].pDescripcion;
+            txtIdProd.Text = Convert.ToString(aProducto[p].pIdProducto);
+            txtPrecioMayo.Text = Convert.ToString(aProducto[p].pPrecioMayo);
+            txtPrecioVenta.Text = Convert.ToString(aProducto[p].pPrecioVenta);
+            txtStock.Text = Convert.ToString(aProducto[p].pStock);
+            txtStockMin.Text = Convert.ToString(aProducto[p].pStockMinimo);
+            cboColor.SelectedValue = aProducto[p].pColor;
+            cboRubro.SelectedValue = aProducto[p].pIdRubro;
+            cboTipoProd.SelectedValue = aProducto[p].pTipoProd;
+            cboMaterial.SelectedValue = aProducto[p].pMaterial;
+        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            habilitar(true);
+            limpiar();
+        }
+
+        
+
+        
+
+        
+
+        private void lstProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lstProducto.SelectedIndex>-1)
+            cargarCampo(lstProducto.SelectedIndex);
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            habilitar(false);
+            nuevo = true;
+            limpiar();
+            cargarLista("productos");
+            txtIdProd.Focus();
+            
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            habilitar(false);
+            txtIdProd.Enabled = false;
+            
+            txtDescripcion.Focus();
+            cargarLista("productos");
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void limpiar()
         {
-
+            txtDescripcion.Clear();
+            txtIdProd.Clear();
+            txtObersavacion.Clear();
+            txtPrecioMayo.Clear();
+            txtPrecioVenta.Clear();
+            txtStock.Clear();
+            txtStockMin.Clear();
+            cboColor.SelectedIndex = -1;
+            cboMaterial.SelectedIndex = -1;
+            cboRubro.SelectedIndex = -1;
+            cboTipoProd.SelectedIndex = -1;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnGrabar_Click(object sender, EventArgs e)
         {
+            if (validarTexto())
+            {
+                string consultaSql = "";
+                if (nuevo)
+                {
+                    Producto p = new Producto();
+                    p.pDescripcion = txtDescripcion.Text;
+                    p.pColor = (int)cboColor.SelectedValue;
+                    p.pIdRubro = (int)cboRubro.SelectedValue;
+                    p.pTipoProd = (int)cboTipoProd.SelectedValue;
+                    p.pObservacion = txtObersavacion.Text;
+                    p.pPrecioMayo = double.Parse(txtPrecioMayo.Text);
+                    p.pPrecioVenta = double.Parse(txtPrecioVenta.Text);
+                    p.pStock = int.Parse(txtStock.Text);
+                    p.pStockMinimo = int.Parse(txtStockMin.Text);
+                    p.pMaterial = (int)cboMaterial.SelectedValue;
+                    consultaSql = $"insert into Productos (descripcion,id_tipo_producto,id_rubro,id_material,observaciones," +
+                        $"id_color,stock,stock_minimo,precio_venta,precio_mayo)values('{p.pDescripcion}',{p.pTipoProd},{p.pIdRubro},{p.pMaterial},'{p.pObservacion}',{p.pColor},{p.pStock}," +
+                        $"{p.pStockMinimo},{p.pPrecioVenta},{p.pPrecioMayo})";
+                    oDato.actualizar(consultaSql);
+                    limpiar();
+                    cargarLista("productos");
+                    
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+                }
+            }
         }
     }
 }
