@@ -44,5 +44,55 @@ namespace DistribuidoraCrelech
         {
 
         }
+
+        private bool validarTexto()
+        {
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                MessageBox.Show("Debe Ingresar Descripcion");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtIdProd.Text))
+            {
+                MessageBox.Show("Debe Ingresar id Producto");
+                return false;
+            }
+            if(string.IsNullOrEmpty(txtPrecioVenta.Text))
+            {
+                MessageBox.Show("Debe ingresar un precio de venta");
+                return false;
+            }
+            if(string.IsNullOrEmpty(txtStock.Text))
+            {
+                MessageBox.Show("Debe ingresar un stock");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtStockMin.Text))
+            {
+                MessageBox.Show("Debe ingresar un stock minimo");
+                return false;
+            }
+            if(string.IsNullOrEmpty(txtPrecioMayo.Text))
+            {
+                MessageBox.Show("debe seleccionar un precio por mayor");
+                return false;
+            }
+            if (cboColor.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un color");
+                return false;
+            }
+            if (cboRubro.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un rubro");
+                return false;
+            }
+            if (cboTipoProd.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de producto");
+                return false;
+            }
+            return true;
+        }
     }
 }

@@ -45,7 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPrecioMayo = new System.Windows.Forms.TextBox();
             this.lstProducto = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@
             // lblTipoProd
             // 
             this.lblTipoProd.AutoSize = true;
-            this.lblTipoProd.Location = new System.Drawing.Point(387, 238);
+            this.lblTipoProd.Location = new System.Drawing.Point(388, 238);
             this.lblTipoProd.Name = "lblTipoProd";
             this.lblTipoProd.Size = new System.Drawing.Size(74, 13);
             this.lblTipoProd.TabIndex = 5;
@@ -142,7 +142,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(389, 160);
+            this.label1.Location = new System.Drawing.Point(389, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 12;
@@ -150,7 +150,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(390, 176);
+            this.txtStock.Location = new System.Drawing.Point(390, 215);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(150, 20);
             this.txtStock.TabIndex = 11;
@@ -158,7 +158,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(389, 121);
+            this.label2.Location = new System.Drawing.Point(389, 160);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 14;
@@ -167,7 +167,7 @@
             // 
             // txtStockMin
             // 
-            this.txtStockMin.Location = new System.Drawing.Point(390, 137);
+            this.txtStockMin.Location = new System.Drawing.Point(390, 176);
             this.txtStockMin.Name = "txtStockMin";
             this.txtStockMin.Size = new System.Drawing.Size(150, 20);
             this.txtStockMin.TabIndex = 13;
@@ -191,18 +191,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(389, 199);
+            this.label4.Location = new System.Drawing.Point(389, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 18;
             this.label4.Text = "Precio por mayor";
             // 
-            // textBox1
+            // txtPrecioMayo
             // 
-            this.textBox1.Location = new System.Drawing.Point(390, 215);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 17;
+            this.txtPrecioMayo.Location = new System.Drawing.Point(390, 137);
+            this.txtPrecioMayo.Name = "txtPrecioMayo";
+            this.txtPrecioMayo.Size = new System.Drawing.Size(150, 20);
+            this.txtPrecioMayo.TabIndex = 17;
             // 
             // lstProducto
             // 
@@ -279,7 +279,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lstProducto);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPrecioMayo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPrecioVenta);
             this.Controls.Add(this.label2);
@@ -323,7 +323,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPrecioVenta;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPrecioMayo;
         private System.Windows.Forms.ListBox lstProducto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
