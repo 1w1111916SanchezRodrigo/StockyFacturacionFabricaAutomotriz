@@ -18,8 +18,8 @@ namespace DistribuidoraCrelech
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new DistribuidoraCrelech());
             //Application.Run(new frmConsultas());
-            //Application.Run(new NuevaFactura());
-            Application.Run(new AbmProducto());
+            Application.Run(new MenuPrincipal());
+            //Application.Run(new AbmProducto());
         }
     }
 }

@@ -127,6 +127,12 @@
       <DependentUpon>frmConsulta1.cs</DependentUpon>
     </Compile>
     <Compile Include="Marcas.cs" />
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto.cs" />
     <Compile Include="Rubros.cs" />
     <Compile Include="SistemaFabricaAutomotriz.cs">
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultasForms\frmConsulta1.resx">
       <DependentUpon>frmConsulta1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SistemaFabricaAutomotriz.resx">
       <DependentUpon>SistemaFabricaAutomotriz.cs</DependentUpon>
