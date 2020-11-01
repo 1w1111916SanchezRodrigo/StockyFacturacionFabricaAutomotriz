@@ -39,6 +39,7 @@ namespace DistribuidoraCrelech
             oDato.CargarCombo(cboMaterial,"Materiales","id_material","descripcion");
             cargarLista("productos");
             habilitar(true);
+            txtIdProd.Enabled = false;
         }
 
         private void lblIdProd_Click(object sender, EventArgs e)
@@ -93,11 +94,7 @@ namespace DistribuidoraCrelech
                 MessageBox.Show("Debe Ingresar Descripcion");
                 return false;
             }
-            if (string.IsNullOrEmpty(txtIdProd.Text))
-            {
-                MessageBox.Show("Debe Ingresar id Producto");
-                return false;
-            }
+            
             if (string.IsNullOrEmpty(txtPrecioVenta.Text))
             {
                 MessageBox.Show("Debe ingresar un precio de venta");
@@ -138,7 +135,6 @@ namespace DistribuidoraCrelech
         private void habilitar(bool x)
         {
             txtDescripcion.Enabled = !x;
-            txtIdProd.Enabled = !x;
             txtObersavacion.Enabled = !x;
             txtPrecioMayo.Enabled = !x;
             txtPrecioVenta.Enabled = !x;
@@ -150,7 +146,7 @@ namespace DistribuidoraCrelech
             cboMaterial.Enabled = !x;
             btnNuevo.Enabled = x;
             btnEditar.Enabled = x;
-            btnBorrar.Enabled = !x;
+            btnBorrar.Enabled = x;
             btnGrabar.Enabled = !x;
             lstProducto.Enabled = x;
         }
@@ -163,6 +159,7 @@ namespace DistribuidoraCrelech
             txtPrecioVenta.Text = Convert.ToString(aProducto[p].pPrecioVenta);
             txtStock.Text = Convert.ToString(aProducto[p].pStock);
             txtStockMin.Text = Convert.ToString(aProducto[p].pStockMinimo);
+            txtObersavacion.Text = aProducto[p].pObservacion;
             cboColor.SelectedValue = aProducto[p].pColor;
             cboRubro.SelectedValue = aProducto[p].pIdRubro;
             cboTipoProd.SelectedValue = aProducto[p].pTipoProd;
@@ -200,6 +197,7 @@ namespace DistribuidoraCrelech
             cargarLista("productos");
             txtIdProd.Focus();
             
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -209,6 +207,7 @@ namespace DistribuidoraCrelech
             
             txtDescripcion.Focus();
             cargarLista("productos");
+            lstProducto.Enabled = true;
 
         }
 
@@ -250,10 +249,57 @@ namespace DistribuidoraCrelech
                         $"{p.pStockMinimo},{p.pPrecioVenta},{p.pPrecioMayo})";
                     oDato.actualizar(consultaSql);
                     limpiar();
+                    habilitar(true);
+                    nuevo = false;
                     cargarLista("productos");
-                    
+
 
                 }
+                else
+                {
+                    int i = lstProducto.SelectedIndex;
+
+                    
+                    aProducto[i].pDescripcion = txtDescripcion.Text;
+                    aProducto[i].pColor = (int)cboColor.SelectedValue;
+                    aProducto[i].pIdRubro = (int)cboRubro.SelectedValue;
+                    aProducto[i].pTipoProd = (int)cboTipoProd.SelectedValue;
+                    aProducto[i].pObservacion = txtObersavacion.Text;
+                    aProducto[i].pPrecioMayo = double.Parse(txtPrecioMayo.Text);
+                    aProducto[i].pPrecioVenta = double.Parse(txtPrecioVenta.Text);
+                    aProducto[i].pStock = int.Parse(txtStock.Text);
+                    aProducto[i].pStockMinimo = int.Parse(txtStockMin.Text);
+                    aProducto[i].pMaterial = (int)cboMaterial.SelectedValue;
+
+                    consultaSql = $"update productos set descripcion = '{aProducto[i].pDescripcion}',id_tipo_producto= {aProducto[i].pTipoProd},id_rubro = {aProducto[i].pIdRubro},id_material = {aProducto[i].pMaterial}" +
+                        $",observaciones = '{aProducto[i].pObservacion}',id_color = {aProducto[i].pColor},stock = {aProducto[i].pStock},stock_minimo = {aProducto[i].pStockMinimo},precio_venta = {aProducto[i].pPrecioVenta}," +
+                        $"precio_mayo = {aProducto[i].pPrecioMayo} where id_producto = {aProducto[i].pIdProducto}";
+                    oDato.actualizar(consultaSql);
+                    habilitar(true);
+                    nuevo = false;
+                    cargarLista("productos");
+                }
+                
+            }
+            nuevo = false;
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro de eliminar a este Producto?", "ELIMINANDO",
+                                                        MessageBoxButtons.YesNo,
+                                                        MessageBoxIcon.Error,
+                                                        MessageBoxDefaultButton.Button2)
+                                                        == DialogResult.Yes)
+
+            {
+                string consultaSQL = "DELETE FROM Productos WHERE id_producto = " + aProducto[lstProducto.SelectedIndex].pIdProducto;
+                oDato.actualizar(consultaSQL);
+                cargarLista("Productos");
+                limpiar();
+
+
+
             }
         }
     }
