@@ -40,6 +40,7 @@ namespace DistribuidoraCrelech
             cargarLista("productos");
             habilitar(true);
             txtIdProd.Enabled = false;
+            limpiar();
         }
 
         private void lblIdProd_Click(object sender, EventArgs e)

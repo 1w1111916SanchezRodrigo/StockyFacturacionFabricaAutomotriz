@@ -67,7 +67,7 @@
             this.panelConsulta.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelConsulta.Location = new System.Drawing.Point(0, 0);
             this.panelConsulta.Name = "panelConsulta";
-            this.panelConsulta.Size = new System.Drawing.Size(220, 401);
+            this.panelConsulta.Size = new System.Drawing.Size(220, 496);
             this.panelConsulta.TabIndex = 0;
             // 
             // btnConsulta8
@@ -279,7 +279,7 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(220, 75);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(580, 326);
+            this.panelDesktop.Size = new System.Drawing.Size(580, 421);
             this.panelDesktop.TabIndex = 2;
             // 
             // picLogo
@@ -290,7 +290,7 @@
             this.picLogo.InitialImage = global::DistribuidoraCrelech.Properties.Resources.opcion1;
             this.picLogo.Location = new System.Drawing.Point(0, 0);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(580, 326);
+            this.picLogo.Size = new System.Drawing.Size(580, 421);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
@@ -299,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 401);
+            this.ClientSize = new System.Drawing.Size(800, 496);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelConsulta);
