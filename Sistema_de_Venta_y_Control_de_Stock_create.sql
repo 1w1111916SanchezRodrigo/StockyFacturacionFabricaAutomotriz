@@ -1653,6 +1653,19 @@ from CUOTAS_AUOTPLAN ca join FACTURAS fa on ca.id_factura = fa.id_factura join D
 group by ca.id_autoplan,  cl.nombre + ' ' + cl.apellido,au.cant_cuota
 
 
+use fabrica_automotriz
+
+create proc sp_productos
+as
+
+select pr.id_producto 'Codigo',pr.descripcion 'Descripcion', tp.descripcion 'Tipo', ru.descripcion 'Rubro', ma.descripcion 'Material',
+		co.descripcion 'Color', pr.stock 'Stock', pr.stock_minimo 'Stock Minimo', precio_mayo 'Precio Mayo', pr.precio_venta 'Precio Venta'
+from productos pr join tipos_productos tp on pr.id_tipo_producto= tp.id_tipo_producto join RUBROS ru on ru.id_rubro = pr.id_rubro
+		left join MATERIALES ma on ma.id_material = pr.id_producto--
+		left join COLORES co on co.id_color = pr.id_color
+
+select *
+from PRODUCTOS
 
 --MODIFICACIONES A LA ESTRUCTURA ORIGINAL--
 

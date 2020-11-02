@@ -42,7 +42,8 @@ namespace DistribuidoraCrelech
 
         private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            frmReportes rp = new frmReportes();
+            rp.Show();
         }
     }
 }
