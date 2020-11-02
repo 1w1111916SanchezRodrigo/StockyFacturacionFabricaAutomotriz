@@ -26,7 +26,7 @@ namespace DistribuidoraCrelech
         private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbmProducto abm = new AbmProducto();
-            abm.Show();
+            abm.ShowDialog();
             this.Close();
 
         }
@@ -34,7 +34,7 @@ namespace DistribuidoraCrelech
         private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmConsultas Consulta = new frmConsultas();
-            Consulta.Show();
+            Consulta.ShowDialog();
             this.Close();
         }
 
@@ -43,7 +43,7 @@ namespace DistribuidoraCrelech
         private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmReportes rp = new frmReportes();
-            rp.Show();
+            rp.ShowDialog();
         }
     }
 }

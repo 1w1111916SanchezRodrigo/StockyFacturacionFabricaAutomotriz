@@ -99,13 +99,13 @@
             // facturasToolStripMenuItem
             // 
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(351, 42);
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(352, 42);
             this.facturasToolStripMenuItem.Text = "Facturas";
             // 
             // pedidosDeProductosToolStripMenuItem
             // 
             this.pedidosDeProductosToolStripMenuItem.Name = "pedidosDeProductosToolStripMenuItem";
-            this.pedidosDeProductosToolStripMenuItem.Size = new System.Drawing.Size(351, 42);
+            this.pedidosDeProductosToolStripMenuItem.Size = new System.Drawing.Size(352, 42);
             this.pedidosDeProductosToolStripMenuItem.Text = "Pedidos de Productos";
             // 
             // autoplanesToolStripMenuItem
@@ -156,14 +156,14 @@
             // aBMToolStripMenuItem
             // 
             this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
-            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(180, 42);
+            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(158, 42);
             this.aBMToolStripMenuItem.Text = "ABM";
             this.aBMToolStripMenuItem.Click += new System.EventHandler(this.aBMToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(180, 42);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(158, 42);
             this.stockToolStripMenuItem.Text = "Stock";
             // 
             // clientesToolStripMenuItem

@@ -169,5 +169,16 @@ namespace DistribuidoraCrelech
             comando.ExecuteNonQuery();
             Desconectar();
         }
+        public DataTable consulta(string consultaSQL)
+        {
+
+            DataTable tabla = new DataTable();
+            comando.Connection = conexion;
+            Conectar();
+            comando.CommandText = consultaSQL;
+            tabla.Load(comando.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
     }
 }

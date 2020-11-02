@@ -114,6 +114,7 @@
             // 
             // cboTipoProd
             // 
+            this.cboTipoProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoProd.FormattingEnabled = true;
             this.cboTipoProd.Location = new System.Drawing.Point(434, 299);
@@ -123,6 +124,7 @@
             // 
             // cboRubro
             // 
+            this.cboRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRubro.FormattingEnabled = true;
             this.cboRubro.Location = new System.Drawing.Point(434, 339);
@@ -142,6 +144,7 @@
             // 
             // cboColor
             // 
+            this.cboColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboColor.FormattingEnabled = true;
             this.cboColor.Location = new System.Drawing.Point(434, 379);
@@ -353,6 +356,7 @@
             // 
             // cboMaterial
             // 
+            this.cboMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMaterial.FormattingEnabled = true;
             this.cboMaterial.Location = new System.Drawing.Point(434, 421);
