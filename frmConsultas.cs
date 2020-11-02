@@ -96,6 +96,19 @@ namespace DistribuidoraCrelech
             picMiniLogo.Visible = false;
         }
 
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Show();
+            this.Close();
+        }
+
+        private void frmConsultas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
         //private Color SelectThemeColor()
         //{
         //    int index = random.Next(ThemeColor.ColorList.Count);

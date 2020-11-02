@@ -25,6 +25,23 @@ namespace DistribuidoraCrelech
 
         private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            AbmProducto abm = new AbmProducto();
+            abm.Show();
+            this.Close();
+
+        }
+
+        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultas Consulta = new frmConsultas();
+            Consulta.Show();
+            this.Close();
+        }
+
+
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
 
         }
     }

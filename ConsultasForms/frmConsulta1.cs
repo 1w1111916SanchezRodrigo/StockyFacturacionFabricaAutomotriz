@@ -44,5 +44,10 @@ namespace DistribuidoraCrelech.ConsultasForms
         {
 
         }
+
+        private void frmConsulta1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

@@ -53,7 +53,7 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtObersavacion = new System.Windows.Forms.TextBox();
             this.cboMaterial = new System.Windows.Forms.ComboBox();
@@ -318,19 +318,19 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnSalir
+            // btnRegresar
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSalir.Location = new System.Drawing.Point(12, 380);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(163, 45);
-            this.btnSalir.TabIndex = 16;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegresar.Location = new System.Drawing.Point(12, 380);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(163, 45);
+            this.btnRegresar.TabIndex = 16;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label5
             // 
@@ -377,7 +377,7 @@
             this.panel1.Controls.Add(this.btnNuevo);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnGrabar);
-            this.panel1.Controls.Add(this.btnSalir);
+            this.panel1.Controls.Add(this.btnRegresar);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Location = new System.Drawing.Point(0, -8);
             this.panel1.Name = "panel1";
@@ -451,7 +451,7 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtObersavacion;
         private System.Windows.Forms.ComboBox cboMaterial;

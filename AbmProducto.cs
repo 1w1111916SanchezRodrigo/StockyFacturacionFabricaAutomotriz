@@ -169,7 +169,9 @@ namespace DistribuidoraCrelech
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Show();
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

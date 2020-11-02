@@ -86,7 +86,7 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(220, 75);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(644, 375);
+            this.panelDesktop.Size = new System.Drawing.Size(643, 375);
             this.panelDesktop.TabIndex = 8;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
@@ -280,7 +280,7 @@
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(220, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(644, 75);
+            this.panelTitle.Size = new System.Drawing.Size(643, 75);
             this.panelTitle.TabIndex = 7;
             // 
             // labelTitle
@@ -291,7 +291,7 @@
             this.labelTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelTitle.Location = new System.Drawing.Point(0, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(644, 75);
+            this.labelTitle.Size = new System.Drawing.Size(643, 75);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Elija la consulta";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -391,7 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 450);
+            this.ClientSize = new System.Drawing.Size(863, 450);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelConsulta);

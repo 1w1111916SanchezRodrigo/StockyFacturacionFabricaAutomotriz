@@ -100,6 +100,7 @@
             this.Controls.Add(this.cmbTipoProdu);
             this.Name = "frmConsulta1";
             this.Text = "Consultas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmConsulta1_FormClosing);
             this.Load += new System.EventHandler(this.Consultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);

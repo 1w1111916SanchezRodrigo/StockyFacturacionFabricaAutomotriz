@@ -44,6 +44,7 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.panelConsulta.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMiniLogo)).BeginInit();
@@ -55,6 +56,7 @@
             // panelConsulta
             // 
             this.panelConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panelConsulta.Controls.Add(this.btnRegresar);
             this.panelConsulta.Controls.Add(this.btnConsulta8);
             this.panelConsulta.Controls.Add(this.btnConsulta7);
             this.panelConsulta.Controls.Add(this.btnConsulta6);
@@ -295,6 +297,27 @@
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRegresar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
+            this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.Location = new System.Drawing.Point(0, 456);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnRegresar.Size = new System.Drawing.Size(220, 40);
+            this.btnRegresar.TabIndex = 9;
+            this.btnRegresar.Text = " Regresar";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // frmConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +329,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConsultas";
             this.Text = "Consultas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmConsultas_FormClosing);
             this.Load += new System.EventHandler(this.frmConsultas_Load);
             this.panelConsulta.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -334,5 +358,6 @@
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.PictureBox picMiniLogo;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }
