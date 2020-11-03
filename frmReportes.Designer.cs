@@ -1,5 +1,4 @@
-﻿using DistribuidoraCrelech;
-namespace DistribuidoraCrelech
+﻿namespace DistribuidoraCrelech
 {
     partial class frmReportes
     {
@@ -32,9 +31,9 @@ namespace DistribuidoraCrelech
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetPrincipal = new DataSetPrincipal();
+            this.DataSetPrincipal = new DistribuidoraCrelech.DataSetPrincipal();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataTable1TableAdapter = new DataSetPrincipalTableAdapters.DataTable1TableAdapter();
+            this.DataTable1TableAdapter = new DistribuidoraCrelech.DataSetPrincipalTableAdapters.DataTable1TableAdapter();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnImprimirFiltro = new System.Windows.Forms.Button();
             this.cboTipoProducto = new System.Windows.Forms.ComboBox();
