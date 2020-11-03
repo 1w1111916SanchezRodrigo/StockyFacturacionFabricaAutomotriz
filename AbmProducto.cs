@@ -92,43 +92,48 @@ namespace DistribuidoraCrelech
         {
             if (string.IsNullOrEmpty(txtDescripcion.Text))
             {
-                MessageBox.Show("Debe Ingresar Descripcion");
+                MessageBox.Show("Debe Ingresar Descripcion","Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             
             if (string.IsNullOrEmpty(txtPrecioVenta.Text))
             {
-                MessageBox.Show("Debe ingresar un precio de venta");
+                MessageBox.Show("Debe ingresar un precio de venta", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if(string.IsNullOrEmpty(txtStock.Text))
             {
-                MessageBox.Show("Debe ingresar un stock");
+                MessageBox.Show("Debe ingresar un stock", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrEmpty(txtStockMin.Text))
             {
-                MessageBox.Show("Debe ingresar un stock minimo");
+                MessageBox.Show("Debe ingresar un stock minimo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if(string.IsNullOrEmpty(txtPrecioMayo.Text))
             {
-                MessageBox.Show("debe seleccionar un precio por mayor");
+                MessageBox.Show("Debe seleccionar un precio por mayor", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (cboColor.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar un color");
+                MessageBox.Show("Debe seleccionar un color", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (cboRubro.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar un rubro");
+                MessageBox.Show("Debe seleccionar un rubro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (cboTipoProd.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar un tipo de producto");
+                MessageBox.Show("Debe seleccionar un tipo de producto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (cboMaterial.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -180,12 +185,6 @@ namespace DistribuidoraCrelech
             limpiar();
         }
 
-        
-
-        
-
-        
-
         private void lstProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(lstProducto.SelectedIndex>-1)
@@ -209,7 +208,6 @@ namespace DistribuidoraCrelech
             txtIdProd.Enabled = false;
             
             txtDescripcion.Focus();
-            cargarLista("productos");
             lstProducto.Enabled = true;
 
         }
@@ -255,8 +253,6 @@ namespace DistribuidoraCrelech
                     habilitar(true);
                     nuevo = false;
                     cargarLista("productos");
-
-
                 }
                 else
                 {
@@ -284,7 +280,6 @@ namespace DistribuidoraCrelech
                 }
                 
             }
-            nuevo = false;
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
