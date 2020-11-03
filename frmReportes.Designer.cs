@@ -66,6 +66,7 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(920, 327);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // DataTable1TableAdapter
             // 
@@ -103,6 +104,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(697, 345);
+            this.txtPrecio.MaxLength = 15;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 4;
