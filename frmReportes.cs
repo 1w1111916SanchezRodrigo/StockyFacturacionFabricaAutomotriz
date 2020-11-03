@@ -66,9 +66,16 @@ namespace DistribuidoraCrelech
 
         private void btnImprimirFiltro_Click(object sender, EventArgs e)
         {
-            string strSQL = $"select p.id_producto 'Codigo', p.descripcion 'Descripcion', p.precio_venta, p.precio_mayo " +
-                            $"FROM PRODUCTOS p join tipos_productos tp on p.id_tipo_producto = tp.id_tipo_producto " +
-                            $"WHERE tp.descripcion like '{cboTipoProducto.Text}%' and p.precio_venta>{txtPrecio.Text}";
+           // string strSQL = $"select pr.id_producto 'Codigo',pr.descripcion 'Descripcion', tp.descripcion 'Tipo', ru.descripcion 'Rubro', ma.descripcion 'Material',"
+           //                + "co.descripcion 'Color', pr.stock 'Stock', pr.stock_minimo 'StockMinimo', precio_mayo 'PrecioMayo', pr.precio_venta 'PrecioVenta'"
+           //                + $"from productos pr join tipos_productos tp on pr.id_tipo_producto = tp.id_tipo_producto join RUBROS ru on ru.id_rubro = pr.id_rubro left"
+           //                + " join MATERIALES ma on ma.id_material = pr.id_producto left join COLORES co on co.id_color = pr.id_color"
+           //                + "where tp.descripcion like '%{cboTipoProducto.Text}%'and p.precio_venta>{txtPrecio.Text}";
+
+                //$"select p.id_producto 'Codigo', p.descripcion 'Descripcion', p.precio_venta 'Precio Venta', p.precio_mayo 'Precio Mayorista' " +
+                //          $"FROM PRODUCTOS p join tipos_productos tp on p.id_tipo_producto = tp.id_tipo_producto " +
+                //        $"WHERE tp.descripcion like '%{cboTipoProducto.Text}%'and p.precio_venta>{txtPrecio.Text}";
+
             DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
             reportViewer1.RefreshReport();
             //if (cboTipoProducto.SelectedValue != 0 && txtPrecio.Text =! null)
