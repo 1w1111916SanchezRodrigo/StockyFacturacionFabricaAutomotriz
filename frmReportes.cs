@@ -16,7 +16,7 @@ namespace DistribuidoraCrelech
         public frmReportes()
         {
             InitializeComponent();
-            Conexion.CargarComboString(cboTipoProducto, "TIPOS_PRODUCTOS", "id_tipo_producto", "descripcion");
+            Conexion.CargarCombo(cboTipoProducto, "TIPOS_PRODUCTOS", "id_tipo_producto", "descripcion");
         }
 
         private void frmReportes_Load(object sender, EventArgs e)
@@ -26,15 +26,20 @@ namespace DistribuidoraCrelech
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            string strSQL = "select p.id_producto, p.descripcion, p.precio_venta, p.precio_mayo from PRODUCTOS p join tipos_productos tp on p.id_tipo_producto = tp.id_tipo_producto where tp.descripcion like '"+ cboTipoProducto.Text+"%'";
-            if (cboTipoProducto.SelectedIndex >= 0)
-            {
-                DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
-                reportViewer1.RefreshReport();
-            }
-            else {
-                MessageBox.Show("Seleccione un tipo de producto");
-            }
+            //string strSQL = "select p.id_producto, p.descripcion, p.precio_venta, p.precio_mayo from PRODUCTOS p join tipos_productos tp on p.id_tipo_producto = tp.id_tipo_producto where tp.descripcion like '"+ cboTipoProducto.Text+"%'";
+            //if (cboTipoProducto.SelectedIndex >= 0)
+            //{
+            //    DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
+            //    reportViewer1.RefreshReport();
+            //}
+            //else 
+            //{
+            //    MessageBox.Show("Seleccione un tipo de producto");
+            //}
+            this.DataTable1TableAdapter.Fill(this.DataSetPrincipal.DataTable1);
+
+            this.reportViewer1.RefreshReport();
+
         }
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -68,5 +73,7 @@ namespace DistribuidoraCrelech
                 MessageBox.Show("Debe seleccionar un tipo de producto y un precio");
             }
         }
+
+
     }
 }

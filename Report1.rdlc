@@ -676,6 +676,7 @@
           <Source>Embedded</Source>
           <Value>opcion1</Value>
           <Sizing>FitProportional</Sizing>
+          <Top>0.38836cm</Top>
           <Left>0.77703cm</Left>
           <Height>2.01717cm</Height>
           <Width>3.06104cm</Width>

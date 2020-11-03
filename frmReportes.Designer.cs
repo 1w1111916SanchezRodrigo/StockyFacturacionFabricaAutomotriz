@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetPrincipal = new DistribuidoraCrelech.DataSetPrincipal();
+            this.DataSetPrincipal = new DataSetPrincipal();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataTable1TableAdapter = new DistribuidoraCrelech.DataSetPrincipalTableAdapters.DataTable1TableAdapter();
+            this.DataTable1TableAdapter = new DataSetPrincipalTableAdapters.DataTable1TableAdapter();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnImprimirFiltro = new System.Windows.Forms.Button();
             this.cboTipoProducto = new System.Windows.Forms.ComboBox();
@@ -54,14 +54,14 @@
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.DataTable1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.DataTable1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "DistribuidoraCrelech.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(741, 327);
             this.reportViewer1.TabIndex = 0;
             // 
             // DataTable1TableAdapter
@@ -70,7 +70,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(13, 457);
+            this.btnImprimir.Location = new System.Drawing.Point(12, 346);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(84, 23);
             this.btnImprimir.TabIndex = 1;
@@ -80,7 +80,7 @@
             // 
             // btnImprimirFiltro
             // 
-            this.btnImprimirFiltro.Location = new System.Drawing.Point(683, 456);
+            this.btnImprimirFiltro.Location = new System.Drawing.Point(682, 345);
             this.btnImprimirFiltro.Name = "btnImprimirFiltro";
             this.btnImprimirFiltro.Size = new System.Drawing.Size(105, 23);
             this.btnImprimirFiltro.TabIndex = 2;
@@ -92,14 +92,14 @@
             // 
             this.cboTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoProducto.FormattingEnabled = true;
-            this.cboTipoProducto.Location = new System.Drawing.Point(363, 456);
+            this.cboTipoProducto.Location = new System.Drawing.Point(362, 345);
             this.cboTipoProducto.Name = "cboTipoProducto";
             this.cboTipoProducto.Size = new System.Drawing.Size(121, 21);
             this.cboTipoProducto.TabIndex = 3;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(577, 456);
+            this.txtPrecio.Location = new System.Drawing.Point(576, 345);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 4;
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 497);
+            this.ClientSize = new System.Drawing.Size(800, 380);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.cboTipoProducto);
             this.Controls.Add(this.btnImprimirFiltro);
