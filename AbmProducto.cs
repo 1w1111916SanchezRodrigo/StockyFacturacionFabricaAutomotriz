@@ -203,10 +203,17 @@ namespace DistribuidoraCrelech
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            habilitar(false);
-            txtIdProd.Enabled = false;
-            txtDescripcion.Focus();
-            lstProducto.Enabled = true;
+            if (lstProducto.SelectedIndex != -1)
+            {
+                habilitar(false);
+                txtIdProd.Enabled = false;
+                txtDescripcion.Focus();
+                lstProducto.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un producto de la lista", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private int cargarId()
