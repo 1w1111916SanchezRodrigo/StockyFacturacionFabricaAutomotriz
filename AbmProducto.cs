@@ -256,27 +256,36 @@ namespace DistribuidoraCrelech
                 }
                 else
                 {
-                    int i = lstProducto.SelectedIndex;
+                    if (lstProducto.SelectedIndex != -1)
+                    {
+                        int i = lstProducto.SelectedIndex;
 
-                    
-                    aProducto[i].pDescripcion = txtDescripcion.Text;
-                    aProducto[i].pColor = (int)cboColor.SelectedValue;
-                    aProducto[i].pIdRubro = (int)cboRubro.SelectedValue;
-                    aProducto[i].pTipoProd = (int)cboTipoProd.SelectedValue;
-                    aProducto[i].pObservacion = txtObersavacion.Text;
-                    aProducto[i].pPrecioMayo = double.Parse(txtPrecioMayo.Text);
-                    aProducto[i].pPrecioVenta = double.Parse(txtPrecioVenta.Text);
-                    aProducto[i].pStock = int.Parse(txtStock.Text);
-                    aProducto[i].pStockMinimo = int.Parse(txtStockMin.Text);
-                    aProducto[i].pMaterial = (int)cboMaterial.SelectedValue;
 
-                    consultaSql = $"update productos set descripcion = '{aProducto[i].pDescripcion}',id_tipo_producto= {aProducto[i].pTipoProd},id_rubro = {aProducto[i].pIdRubro},id_material = {aProducto[i].pMaterial}" +
-                        $",observaciones = '{aProducto[i].pObservacion}',id_color = {aProducto[i].pColor},stock = {aProducto[i].pStock},stock_minimo = {aProducto[i].pStockMinimo},precio_venta = {aProducto[i].pPrecioVenta}," +
-                        $"precio_mayo = {aProducto[i].pPrecioMayo} where id_producto = {aProducto[i].pIdProducto}";
-                    oDato.actualizar(consultaSql);
-                    habilitar(true);
-                    nuevo = false;
-                    cargarLista("productos");
+                        aProducto[i].pDescripcion = txtDescripcion.Text;
+                        aProducto[i].pColor = (int)cboColor.SelectedValue;
+                        aProducto[i].pIdRubro = (int)cboRubro.SelectedValue;
+                        aProducto[i].pTipoProd = (int)cboTipoProd.SelectedValue;
+                        aProducto[i].pObservacion = txtObersavacion.Text;
+                        aProducto[i].pPrecioMayo = double.Parse(txtPrecioMayo.Text);
+                        aProducto[i].pPrecioVenta = double.Parse(txtPrecioVenta.Text);
+                        aProducto[i].pStock = int.Parse(txtStock.Text);
+                        aProducto[i].pStockMinimo = int.Parse(txtStockMin.Text);
+                        aProducto[i].pMaterial = (int)cboMaterial.SelectedValue;
+
+                        consultaSql = $"update productos set descripcion = '{aProducto[i].pDescripcion}',id_tipo_producto= {aProducto[i].pTipoProd},id_rubro = {aProducto[i].pIdRubro},id_material = {aProducto[i].pMaterial}" +
+                            $",observaciones = '{aProducto[i].pObservacion}',id_color = {aProducto[i].pColor},stock = {aProducto[i].pStock},stock_minimo = {aProducto[i].pStockMinimo},precio_venta = {aProducto[i].pPrecioVenta}," +
+                            $"precio_mayo = {aProducto[i].pPrecioMayo} where id_producto = {aProducto[i].pIdProducto}";
+                        oDato.actualizar(consultaSql);
+                        habilitar(true);
+                        nuevo = false;
+                        cargarLista("productos");
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar un producto de la lista", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        
+                    }
                 }
                 
             }
@@ -284,21 +293,27 @@ namespace DistribuidoraCrelech
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta seguro de eliminar a este Producto?", "ELIMINANDO",
+            if (lstProducto.SelectedIndex != -1)
+            {
+                if (MessageBox.Show("Esta seguro de eliminar a este Producto?", "ELIMINANDO",
                                                         MessageBoxButtons.YesNo,
                                                         MessageBoxIcon.Error,
                                                         MessageBoxDefaultButton.Button2)
                                                         == DialogResult.Yes)
 
-            {
-                string consultaSQL = "DELETE FROM Productos WHERE id_producto = " + aProducto[lstProducto.SelectedIndex].pIdProducto;
-                oDato.actualizar(consultaSQL);
-                cargarLista("Productos");
-                limpiar();
-
-
-
+                {
+                    string consultaSQL = "DELETE FROM Productos WHERE id_producto = " + aProducto[lstProducto.SelectedIndex].pIdProducto;
+                    oDato.actualizar(consultaSQL);
+                    cargarLista("Productos");
+                    limpiar();
+                }
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un producto de la lista", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        
+            
         }
 
         
