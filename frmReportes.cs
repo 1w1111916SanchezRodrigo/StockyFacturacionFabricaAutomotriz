@@ -26,19 +26,23 @@ namespace DistribuidoraCrelech
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            string strSQL = "select pr.id_producto 'Codigo',pr.descripcion 'Descripcion', tp.descripcion 'Tipo', ru.descripcion 'Rubro', ma.descripcion 'Material',"
+                           + "co.descripcion 'Color', pr.stock 'Stock', pr.stock_minimo 'StockMinimo', precio_mayo 'PrecioMayo', pr.precio_venta 'PrecioVenta'"
+                            + " from productos pr join tipos_productos tp on pr.id_tipo_producto = tp.id_tipo_producto join RUBROS ru on ru.id_rubro = pr.id_rubro left"
+                            + " join MATERIALES ma on ma.id_material = pr.id_producto left join COLORES co on co.id_color = pr.id_color";
             //string strSQL = "select p.id_producto, p.descripcion, p.precio_venta, p.precio_mayo from PRODUCTOS p join tipos_productos tp on p.id_tipo_producto = tp.id_tipo_producto where tp.descripcion like '"+ cboTipoProducto.Text+"%'";
             //if (cboTipoProducto.SelectedIndex >= 0)
             //{
-            //    DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
-            //    reportViewer1.RefreshReport();
+            DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
+            reportViewer1.RefreshReport();
             //}
             //else 
             //{
             //    MessageBox.Show("Seleccione un tipo de producto");
             //}
-            this.DataTable1TableAdapter.Fill(this.DataSetPrincipal.DataTable1);
+            //this.DataTable1TableAdapter.Fill(this.DataSetPrincipal.DataTable1);
 
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
 
         }
 
@@ -62,16 +66,20 @@ namespace DistribuidoraCrelech
 
         private void btnImprimirFiltro_Click(object sender, EventArgs e)
         {
-            string strSQL = "select p.id_producto, p.descripcion, p.precio_venta, p.precio_mayo from PRODUCTOS p join tipos_productos tp on p.id_tipo_producto = tp.id_tipo_producto where tp.descripcion like '" + cboTipoProducto.Text + "%' and p.precio_venta>"+txtPrecio.Text+"'";
-            if (cboTipoProducto.SelectedIndex >= 0 && txtPrecio.Text!=null)
-            {
-                DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
-                reportViewer1.RefreshReport();
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un tipo de producto y un precio");
-            }
+            string strSQL = $"select p.id_producto 'Codigo', p.descripcion 'Descripcion', p.precio_venta, p.precio_mayo " +
+                            $"FROM PRODUCTOS p join tipos_productos tp on p.id_tipo_producto = tp.id_tipo_producto " +
+                            $"WHERE tp.descripcion like '{cboTipoProducto.Text}%' and p.precio_venta>{txtPrecio.Text}";
+            DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
+            reportViewer1.RefreshReport();
+            //if (cboTipoProducto.SelectedValue != 0 && txtPrecio.Text =! null)
+            //{
+            //    DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
+            //    reportViewer1.RefreshReport();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Debe seleccionar un tipo de producto y un precio");
+            //}
         }
 
 
