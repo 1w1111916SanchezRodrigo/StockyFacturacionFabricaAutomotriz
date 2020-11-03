@@ -198,18 +198,24 @@ namespace DistribuidoraCrelech
             limpiar();
             cargarLista("productos");
             txtDescripcion.Focus();
-            
-            
+            txtIdProd.Text = cargarId().ToString();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             habilitar(false);
             txtIdProd.Enabled = false;
-            
             txtDescripcion.Focus();
             lstProducto.Enabled = true;
+        }
 
+        private int cargarId()
+        {
+            DataTable tabla = new DataTable();
+            int ID;
+            tabla = oDato.consulta("SELECT MAX(id_producto) FROM PRODUCTOS ");
+            ID = Convert.ToInt32(tabla.Rows[0][0])+1;
+            return ID;
         }
 
         private void limpiar()
