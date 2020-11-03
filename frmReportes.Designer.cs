@@ -1,4 +1,5 @@
-﻿namespace DistribuidoraCrelech
+﻿using DistribuidoraCrelech;
+namespace DistribuidoraCrelech
 {
     partial class frmReportes
     {
@@ -54,6 +55,7 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Top;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.DataTable1BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
@@ -61,7 +63,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(741, 327);
+            this.reportViewer1.Size = new System.Drawing.Size(920, 327);
             this.reportViewer1.TabIndex = 0;
             // 
             // DataTable1TableAdapter
@@ -109,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 380);
+            this.ClientSize = new System.Drawing.Size(920, 380);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.cboTipoProducto);
             this.Controls.Add(this.btnImprimirFiltro);

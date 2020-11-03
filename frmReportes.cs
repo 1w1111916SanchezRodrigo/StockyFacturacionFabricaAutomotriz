@@ -66,20 +66,19 @@ namespace DistribuidoraCrelech
 
         private void btnImprimirFiltro_Click(object sender, EventArgs e)
         {
-            string strSQL = $"select p.id_producto 'Codigo', p.descripcion 'Descripcion', p.precio_venta, p.precio_mayo " +
-                            $"FROM PRODUCTOS p join tipos_productos tp on p.id_tipo_producto = tp.id_tipo_producto " +
-                            $"WHERE tp.descripcion like '{cboTipoProducto.Text}%' and p.precio_venta>{txtPrecio.Text}";
-            DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
-            reportViewer1.RefreshReport();
-            //if (cboTipoProducto.SelectedValue != 0 && txtPrecio.Text =! null)
-            //{
-            //    DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
-            //    reportViewer1.RefreshReport();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Debe seleccionar un tipo de producto y un precio");
-            //}
+
+            if (!string.IsNullOrEmpty(txtPrecio.Text))
+            {
+                string strSQL = $"select p.id_producto 'Codigo', p.descripcion 'Descripcion', p.precio_venta, p.precio_mayo " +
+                                $"FROM PRODUCTOS p join tipos_productos tp on p.id_tipo_producto = tp.id_tipo_producto " +
+                                $"WHERE tp.descripcion like '{cboTipoProducto.Text}%' and p.precio_venta>{txtPrecio.Text}";
+                DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
+                reportViewer1.RefreshReport();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un tipo de producto y un precio");
+            }
         }
 
 
