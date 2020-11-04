@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms; //Agrego esta librería
 
 
-namespace ABMProductos
+namespace DistribuidoraCrelech
 {
     class Validar
     {
@@ -43,15 +43,15 @@ namespace ABMProductos
 				{
 					v.Handled = false;
 				}
-				//Cambiar por "." si el idioma del visual es inglés
-				else if (v.KeyChar.ToString().Equals(","))
+				//Cambiar por "," si el idioma del visual es en esáñol
+				else if (v.KeyChar.ToString().Equals("."))
 				{
 					v.Handled = false;
 				}
 				else
 				{
 					v.Handled = true;
-					MessageBox.Show("Por favor ingrese en este campo números. Si se trata de un número decimal utilice la coma y no el punto", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					//MessageBox.Show("Por favor ingrese en este campo números. Si se trata de un número decimal utilice la coma y no el punto", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 			}
 		}

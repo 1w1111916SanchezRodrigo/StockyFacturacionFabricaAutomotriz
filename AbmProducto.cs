@@ -181,8 +181,15 @@ namespace DistribuidoraCrelech
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            if(nuevo)
+            {
+                limpiar();
+                nuevo = false;
+                lstProducto.SelectedIndex = 0;
+            }
+            cargarCampo(lstProducto.SelectedIndex);
             habilitar(true);
-            limpiar();
+
         }
 
         private void lstProducto_SelectedIndexChanged(object sender, EventArgs e)
@@ -253,8 +260,8 @@ namespace DistribuidoraCrelech
                     p.pIdRubro = (int)cboRubro.SelectedValue;
                     p.pTipoProd = (int)cboTipoProd.SelectedValue;
                     p.pObservacion = txtObersavacion.Text;
-                    p.pPrecioMayo = double.Parse(txtPrecioMayo.Text);
-                    p.pPrecioVenta = double.Parse(txtPrecioVenta.Text);
+                    p.pPrecioMayo = float.Parse(txtPrecioMayo.Text);
+                    p.pPrecioVenta = float.Parse(txtPrecioVenta.Text);
                     p.pStock = int.Parse(txtStock.Text);
                     p.pStockMinimo = int.Parse(txtStockMin.Text);
                     p.pMaterial = (int)cboMaterial.SelectedValue;
@@ -266,6 +273,7 @@ namespace DistribuidoraCrelech
                     habilitar(true);
                     nuevo = false;
                     cargarLista("productos");
+                    lstProducto.SelectedIndex = 0;
                 }
                 else
                 {
@@ -279,8 +287,8 @@ namespace DistribuidoraCrelech
                         aProducto[i].pIdRubro = (int)cboRubro.SelectedValue;
                         aProducto[i].pTipoProd = (int)cboTipoProd.SelectedValue;
                         aProducto[i].pObservacion = txtObersavacion.Text;
-                        aProducto[i].pPrecioMayo = double.Parse(txtPrecioMayo.Text);
-                        aProducto[i].pPrecioVenta = double.Parse(txtPrecioVenta.Text);
+                        aProducto[i].pPrecioMayo = float.Parse(txtPrecioMayo.Text);
+                        aProducto[i].pPrecioVenta = float.Parse(txtPrecioVenta.Text);
                         aProducto[i].pStock = int.Parse(txtStock.Text);
                         aProducto[i].pStockMinimo = int.Parse(txtStockMin.Text);
                         aProducto[i].pMaterial = (int)cboMaterial.SelectedValue;
@@ -333,24 +341,22 @@ namespace DistribuidoraCrelech
 
         private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-
-                e.Handled = true;
-
-            }
+            //if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255 || (e.KeyChar.ToString().Equals(","))))
+            //{
+            //    e.Handled = true;
+            //}
+            Validar.NumerosDecimales(e);
         }
 
         
 
         private void txtPrecioMayo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-
-                e.Handled = true;
-
-            }
+            //if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255) || (e.KeyChar.ToString().Equals(",")))
+            //{
+            //    e.Handled = true;
+            //}
+            Validar.NumerosDecimales(e);
         }
 
         private void txtStockMin_KeyPress(object sender, KeyPressEventArgs e)
