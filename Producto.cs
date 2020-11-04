@@ -10,7 +10,7 @@ namespace DistribuidoraCrelech
     {
         int idProducto,tipoProd,idRubro,material,color,stock,stockMinimo;
         string descripcion,observacion;
-        double precioVenta, precioMayo;
+        decimal precioVenta, precioMayo;
 
 
 
@@ -21,8 +21,8 @@ namespace DistribuidoraCrelech
         public int pColor { get => color; set => color = value; }
         public int pStock { get => stock; set => stock = value; }
         public int pStockMinimo { get => stockMinimo; set => stockMinimo = value; }
-        public double pPrecioVenta { get => precioVenta; set => precioVenta = value; }
-        public double pPrecioMayo { get => precioMayo; set => precioMayo = value; }
+        public decimal pPrecioVenta { get => precioVenta; set => precioVenta = value; }
+        public decimal pPrecioMayo { get => precioMayo; set => precioMayo = value; }
         public string pDescripcion { get => descripcion; set => descripcion = value; }
         public string pObservacion { get => observacion; set => observacion = value; }
 

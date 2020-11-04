@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -73,9 +74,9 @@ namespace DistribuidoraCrelech
                 if (!oDato.pLector.IsDBNull(8))
                     p.pStockMinimo = oDato.pLector.GetInt32(8);
                 if (!oDato.pLector.IsDBNull(9))
-                    p.pPrecioVenta = Convert.ToDouble(oDato.pLector.GetDecimal(9));
+                    p.pPrecioVenta = Convert.ToDecimal(oDato.pLector.GetDecimal(9));
                 if (!oDato.pLector.IsDBNull(10))
-                    p.pPrecioMayo = Convert.ToDouble(oDato.pLector.GetDecimal(10));
+                    p.pPrecioMayo = Convert.ToDecimal(oDato.pLector.GetDecimal(10));
                 aProducto[c] = p;
                 c++;
 
@@ -161,8 +162,8 @@ namespace DistribuidoraCrelech
         {
             txtDescripcion.Text = aProducto[p].pDescripcion;
             txtIdProd.Text = Convert.ToString(aProducto[p].pIdProducto);
-            txtPrecioMayo.Text = Convert.ToString(aProducto[p].pPrecioMayo);
-            txtPrecioVenta.Text = Convert.ToString(aProducto[p].pPrecioVenta);
+            txtPrecioMayo.Text = aProducto[p].pPrecioMayo.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            txtPrecioVenta.Text = aProducto[p].pPrecioVenta.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
             txtStock.Text = Convert.ToString(aProducto[p].pStock);
             txtStockMin.Text = Convert.ToString(aProducto[p].pStockMinimo);
             txtObersavacion.Text = aProducto[p].pObservacion;
@@ -260,8 +261,8 @@ namespace DistribuidoraCrelech
                     p.pIdRubro = (int)cboRubro.SelectedValue;
                     p.pTipoProd = (int)cboTipoProd.SelectedValue;
                     p.pObservacion = txtObersavacion.Text;
-                    p.pPrecioMayo = float.Parse(txtPrecioMayo.Text);
-                    p.pPrecioVenta = float.Parse(txtPrecioVenta.Text);
+                    p.pPrecioMayo = Convert.ToDecimal(txtPrecioMayo.Text);
+                    p.pPrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
                     p.pStock = int.Parse(txtStock.Text);
                     p.pStockMinimo = int.Parse(txtStockMin.Text);
                     p.pMaterial = (int)cboMaterial.SelectedValue;
@@ -287,8 +288,8 @@ namespace DistribuidoraCrelech
                         aProducto[i].pIdRubro = (int)cboRubro.SelectedValue;
                         aProducto[i].pTipoProd = (int)cboTipoProd.SelectedValue;
                         aProducto[i].pObservacion = txtObersavacion.Text;
-                        aProducto[i].pPrecioMayo = float.Parse(txtPrecioMayo.Text);
-                        aProducto[i].pPrecioVenta = float.Parse(txtPrecioVenta.Text);
+                        aProducto[i].pPrecioMayo = Convert.ToDecimal(txtPrecioMayo.Text);
+                        aProducto[i].pPrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
                         aProducto[i].pStock = int.Parse(txtStock.Text);
                         aProducto[i].pStockMinimo = int.Parse(txtStockMin.Text);
                         aProducto[i].pMaterial = (int)cboMaterial.SelectedValue;
@@ -300,7 +301,9 @@ namespace DistribuidoraCrelech
                         habilitar(true);
                         nuevo = false;
                         cargarLista("productos");
-                        
+                        lstProducto.SelectedIndex = 0;
+
+
                     }
                     else
                     {
