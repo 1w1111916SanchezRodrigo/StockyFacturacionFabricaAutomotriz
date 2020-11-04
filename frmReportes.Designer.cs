@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetPrincipal = new DistribuidoraCrelech.DataSetPrincipal();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -96,7 +97,7 @@
             // 
             this.cboTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoProducto.FormattingEnabled = true;
-            this.cboTipoProducto.Location = new System.Drawing.Point(483, 345);
+            this.cboTipoProducto.Location = new System.Drawing.Point(434, 346);
             this.cboTipoProducto.Name = "cboTipoProducto";
             this.cboTipoProducto.Size = new System.Drawing.Size(121, 21);
             this.cboTipoProducto.TabIndex = 3;
@@ -113,7 +114,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(386, 348);
+            this.label1.Location = new System.Drawing.Point(337, 349);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 5;
@@ -122,11 +123,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(616, 348);
+            this.label2.Location = new System.Drawing.Point(574, 350);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Precio minimo:";
+            this.label2.Text = "Precio venta minimo:";
             // 
             // frmReportes
             // 
@@ -140,6 +141,7 @@
             this.Controls.Add(this.btnImprimirFiltro);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReportes";
             this.Text = "frmReportes";
             this.Load += new System.EventHandler(this.frmReportes_Load);
