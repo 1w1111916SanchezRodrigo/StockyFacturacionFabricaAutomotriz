@@ -70,9 +70,11 @@ namespace DistribuidoraCrelech
 
             if (string.IsNullOrEmpty(txtPrecio.Text))
             {
-                strSQL += $" where tp.descripcion like '{cboTipoProducto.Text}%'";
                 
-                DataTable1BindingSource.DataSource = Conexion.consulta(strSQL);
+                string strSQL1 = strSQL + " where tp.descripcion like '" + cboTipoProducto.Text + "%'";
+
+
+                DataTable1BindingSource.DataSource = Conexion.consulta(strSQL1);
                 reportViewer1.RefreshReport();
             }
             else
