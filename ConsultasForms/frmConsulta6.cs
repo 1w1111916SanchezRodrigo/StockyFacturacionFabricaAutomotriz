@@ -37,5 +37,10 @@ namespace DistribuidoraCrelech.ConsultasForms
         {
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
