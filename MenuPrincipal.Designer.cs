@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panelConsulta = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,13 +100,13 @@
             // facturasToolStripMenuItem
             // 
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(352, 42);
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(351, 42);
             this.facturasToolStripMenuItem.Text = "Facturas";
             // 
             // pedidosDeProductosToolStripMenuItem
             // 
             this.pedidosDeProductosToolStripMenuItem.Name = "pedidosDeProductosToolStripMenuItem";
-            this.pedidosDeProductosToolStripMenuItem.Size = new System.Drawing.Size(352, 42);
+            this.pedidosDeProductosToolStripMenuItem.Size = new System.Drawing.Size(351, 42);
             this.pedidosDeProductosToolStripMenuItem.Text = "Pedidos de Productos";
             // 
             // autoplanesToolStripMenuItem
@@ -128,7 +129,7 @@
             // 
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(213, 42);
-            this.consultasToolStripMenuItem.Text = "Clientes";
+            this.consultasToolStripMenuItem.Text = "Consultas";
             this.consultasToolStripMenuItem.Click += new System.EventHandler(this.consultasToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem1
@@ -156,21 +157,21 @@
             // aBMToolStripMenuItem
             // 
             this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
-            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(158, 42);
+            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(180, 42);
             this.aBMToolStripMenuItem.Text = "ABM";
             this.aBMToolStripMenuItem.Click += new System.EventHandler(this.aBMToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(158, 42);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(180, 42);
             this.stockToolStripMenuItem.Text = "Stock";
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(219, 41);
-            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Text = "Vendedores";
             // 
             // panelTitle
             // 
@@ -244,6 +245,7 @@
             this.Controls.Add(this.panelConsulta);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuPrincipal";
             this.Text = "MenuPrincipal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);

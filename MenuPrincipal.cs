@@ -45,5 +45,7 @@ namespace DistribuidoraCrelech
             frmReportes rp = new frmReportes();
             rp.ShowDialog();
         }
+
+
     }
 }
