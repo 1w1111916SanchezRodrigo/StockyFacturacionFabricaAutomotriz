@@ -67,6 +67,7 @@
             this.txtIdProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdProd.Location = new System.Drawing.Point(435, 26);
             this.txtIdProd.Name = "txtIdProd";
+            this.txtIdProd.ShortcutsEnabled = false;
             this.txtIdProd.Size = new System.Drawing.Size(150, 22);
             this.txtIdProd.TabIndex = 0;
             // 
@@ -99,6 +100,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(435, 65);
             this.txtDescripcion.MaxLength = 99;
             this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ShortcutsEnabled = false;
             this.txtDescripcion.Size = new System.Drawing.Size(150, 22);
             this.txtDescripcion.TabIndex = 1;
             // 
@@ -178,6 +180,7 @@
             this.txtStock.Location = new System.Drawing.Point(435, 260);
             this.txtStock.MaxLength = 9;
             this.txtStock.Name = "txtStock";
+            this.txtStock.ShortcutsEnabled = false;
             this.txtStock.Size = new System.Drawing.Size(150, 22);
             this.txtStock.TabIndex = 6;
             this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
@@ -198,6 +201,7 @@
             this.txtStockMin.Location = new System.Drawing.Point(435, 221);
             this.txtStockMin.MaxLength = 9;
             this.txtStockMin.Name = "txtStockMin";
+            this.txtStockMin.ShortcutsEnabled = false;
             this.txtStockMin.Size = new System.Drawing.Size(150, 22);
             this.txtStockMin.TabIndex = 5;
             this.txtStockMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockMin_KeyPress);
@@ -218,6 +222,7 @@
             this.txtPrecioVenta.Location = new System.Drawing.Point(435, 143);
             this.txtPrecioVenta.MaxLength = 15;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.ShortcutsEnabled = false;
             this.txtPrecioVenta.Size = new System.Drawing.Size(150, 22);
             this.txtPrecioVenta.TabIndex = 3;
             this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
@@ -238,6 +243,7 @@
             this.txtPrecioMayo.Location = new System.Drawing.Point(435, 182);
             this.txtPrecioMayo.MaxLength = 15;
             this.txtPrecioMayo.Name = "txtPrecioMayo";
+            this.txtPrecioMayo.ShortcutsEnabled = false;
             this.txtPrecioMayo.Size = new System.Drawing.Size(150, 22);
             this.txtPrecioMayo.TabIndex = 4;
             this.txtPrecioMayo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMayo_KeyPress);
@@ -351,6 +357,7 @@
             this.txtObersavacion.Location = new System.Drawing.Point(435, 104);
             this.txtObersavacion.MaxLength = 49;
             this.txtObersavacion.Name = "txtObersavacion";
+            this.txtObersavacion.ShortcutsEnabled = false;
             this.txtObersavacion.Size = new System.Drawing.Size(150, 22);
             this.txtObersavacion.TabIndex = 2;
             // 
